@@ -126,6 +126,11 @@ const sections = [
           "Your profile and cover photos are shown only to people who share a plan with you (including past plans), people in your Circle, people you've messaged, and anyone you've sent a Circle or join request to. They are never shown to someone you've blocked. Everyone else, including anyone who opens a shared plan link, sees your initials instead. If you choose to appear on the public leaderboard, your profile photo is shown there too.",
       },
       {
+        subtitle: "Who sees your social links",
+        content:
+          "The social links you add to your profile (such as Instagram, TikTok, LinkedIn, X or Facebook) are shown only to people who share a plan with you (including past plans) and people in your Circle. They are never shown to someone you've blocked or who has blocked you. If you hold the Konectr Captain badge, your links are shown to every signed-in Konectr member. You can change or remove them at any time in Edit profile, and they are deleted with your account.",
+      },
+      {
         subtitle: "This Week wall (photos you choose to publish)",
         content:
           "A photo sent in a plan's group chat can be shared to This Week by anyone who was on that plan. A published photo is visible to every signed-in Konectr member in your city for 14 days, shown only as the venue, the kind of plan and the group size — never a name, a date, or a link to the plan. Any attendee of that plan can take it down at any time, we review every photo before it goes live, location data is stripped from the image, and the file is deleted from our storage when the 14 days end. Only share photos that everyone in them is comfortable with.",
