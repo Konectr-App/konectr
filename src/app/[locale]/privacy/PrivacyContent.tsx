@@ -347,7 +347,7 @@ export function PrivacyContent() {
       <section className="pt-12 pb-4">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-muted-foreground text-sm">
-            Last Updated: October 11, 2026 &middot; Effective Date: December 10,
+            Last Updated: October 21, 2026 &middot; Effective Date: December 10,
             2025
           </p>
         </div>
