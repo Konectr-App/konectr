@@ -80,6 +80,7 @@ const sections = [
           // nothing deleted messages, and "encrypted" invited an end-to-end
           // reading we do not support. See the retention table below.
           "Messages sent (retained while the conversation exists)",
+          "Alerts you turn on (optional): the hashtag or area you ask us to watch, the full plans you want to hear about if a spot opens, and the days we sent you an alert",
         ],
       },
       {
@@ -129,6 +130,11 @@ const sections = [
         subtitle: "Who sees your social links",
         content:
           "The social links you add to your profile (such as Instagram, TikTok, LinkedIn, X or Facebook) are shown only to people who share a plan with you (including past plans) and people in your Circle. They are never shown to someone you've blocked or who has blocked you. If you hold the Konectr Captain badge, your links are shown to every signed-in Konectr member. You can change or remove them at any time in Edit profile, and they are deleted with your account.",
+      },
+      {
+        subtitle: "Alerts you ask for",
+        content:
+          "If you ask Konectr to tell you when someone's up for something, or when a spot opens on a full plan, we store that request. Nobody else sees your alerts, and the person whose plan you're watching isn't told. You get at most one alert a day, and never for a women-only plan you can't join, a Circle-only plan you're not part of, or someone you've blocked or who has blocked you. To stop, turn the alert off where you set it, which deletes it, or turn off Reminders in Settings → Notifications to stop the pushes. Your alerts are deleted with your account.",
       },
       {
         subtitle: "This Week wall (photos you choose to publish)",
@@ -272,6 +278,11 @@ const sections = [
         period: "Chat location shares expire after 15 minutes. Meetup-confirmation coordinates are kept while your account is open and erased on deletion",
       },
       {
+        data: "Alerts you turn on",
+        period:
+          "Kept until you turn the alert off, which deletes it. The record of days we sent you an alert is kept while your account is open. Both are erased with your account",
+      },
+      {
         data: "Crash logs",
         period: "Retained for 90 days by Firebase Crashlytics",
       },
@@ -281,9 +292,9 @@ const sections = [
           "Retained after account deletion, so that deleting an account cannot erase a report",
       },
       // PF-46, founder answer 7 (2026-10-11). This is a PDPA commitment (see the
-      // header above): the women_only_bans purge was NOT live in prod on
-      // 2026-10-11 (no function or cron job touches the table). Do not deploy
-      // this row until that purge exists and has run.
+      // header above). The purge is live: public.purge_women_only_ban_pii, cron
+      // job purge-women-only-ban-pii daily at 03:40 UTC (13 successful runs,
+      // last 2026-10-24, checked 2026-10-25).
       {
         data: "Women-only ban list (web RSVPs)",
         period:
@@ -347,7 +358,7 @@ export function PrivacyContent() {
       <section className="pt-12 pb-4">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-muted-foreground text-sm">
-            Last Updated: October 21, 2026 &middot; Effective Date: December 10,
+            Last Updated: October 25, 2026 &middot; Effective Date: December 10,
             2025
           </p>
         </div>
