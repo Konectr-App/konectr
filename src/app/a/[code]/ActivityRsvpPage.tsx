@@ -416,6 +416,7 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
     title,
     purpose: purposeText,
     category: activity.category,
+    tags: activity.tags,
     womenOnly: activity.women_only,
   });
   // Poster heading = activity title, matching the mobile app's activity screen

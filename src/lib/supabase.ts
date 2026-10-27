@@ -42,6 +42,9 @@ export interface SharedActivity {
   day_part: string | null;
   /** The plan's city (`user_availability.city`); null on most plans. */
   area: string | null;
+  /** `user_availability.tags` (hashtag + hub keys). Not returned by the RPC yet;
+   *  once it is, the hero uses the hashtag's photo instead of keyword matching. */
+  tags?: string[] | null;
 }
 
 // Fetch activity by share code
