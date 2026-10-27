@@ -33,6 +33,10 @@ const KEYWORD_RULES: Array<[RegExp, string]> = [
   // (1080×1440). Keyed to the event name, not the venue: Sunway Lagoon also hosts
   // daytime water-park plans that must not get a horror poster.
   [/nights? of frights?/, 'nights-of-fright'],
+  // Safehouse Sky Society KL (Jalan Raja Chulan), e.g. "SKY HIGH SUNDAY SOCIAL!"
+  // (share 31125EB1). Keyed to the venue: its plans say "rooftop cafe", which the
+  // cafe rule would take. safehouse.jpg = founder-supplied venue interior (786×1048).
+  [/safehouse sky society/, 'safehouse'],
   // Halloween Rooftop Masquerade @ Upper House (share E812979F, 31 Oct 2026).
   // halloween-masquerade.jpg = founder-made event poster (1080×1350). Keyed to the
   // event name and above the rooftop rule, so other Upper House / rooftop plans keep
