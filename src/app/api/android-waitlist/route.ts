@@ -5,6 +5,11 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { clientIp, createRateLimiter } from '@/lib/rateLimit';
+
+// 10 per IP per hour, the same cap create_web_rsvp applies (#257).
+const allow = createRateLimiter(10, 60 * 60 * 1000);
+
 
 // 500s never echo Postgres/Notion error text to the browser; the detail is logged server-side.
 const GENERIC_500 = "Something went wrong. Please try again.";
@@ -18,6 +23,13 @@ function sanitizeUtm(v: unknown): string | null {
 }
 
 export async function POST(request: NextRequest) {
+  if (!allow(clientIp(request))) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { email, share_code, activity_id } = body;

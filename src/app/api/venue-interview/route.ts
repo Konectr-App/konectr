@@ -3,6 +3,11 @@
 
 import { Client } from "@notionhq/client";
 import { NextRequest, NextResponse } from "next/server";
+import { clientIp, createRateLimiter } from "@/lib/rateLimit";
+
+// The form is founder-only (~2 interviews a week), so 20 per IP per hour is generous (#257).
+const allow = createRateLimiter(20, 60 * 60 * 1000);
+
 
 // 500s never echo Postgres/Notion error text to the browser; the detail is logged server-side.
 const GENERIC_500 = "Something went wrong. Please try again.";
@@ -28,6 +33,13 @@ async function ensureSchema() {
 }
 
 export async function POST(request: NextRequest) {
+  if (!allow(clientIp(request))) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   if (!DATABASE_ID) {
     return NextResponse.json(
       { error: "Interview database not configured" },
