@@ -15,7 +15,7 @@ const TITLES = [
   'Coffee',
   'Gym session', 'Bukit Kiara hike', 'Rooftop sunset', 'Cocktail bar', 'Lunch at TRX',
   'Makan dinner', 'Morning run', 'Yoga flow', 'Hoops', 'Futsal', 'Bouldering',
-  'Pottery wheel throw', 'Board games', 'Paint and sip', 'Cowork Friday', 'Hang out',
+  'Pottery wheel throw', 'Board games', 'Paint and sip', 'Cowork Friday', 'Nights of Fright', 'Safehouse Sky Society', 'Hang out',
 ];
 const SAFE = ['art', 'basketball', 'cowork', 'golf', 'padel', 'pottery', 'trx', 'yoga'].map((k) => `/images/activities/${k}.jpg`);
 
@@ -131,6 +131,48 @@ describe('activityImage — hashtag photos', () => {
     [{ vibe: 'social' as VibeKey, title: 'GAMES & CHILL — BOARD GAME NIGHT!*', venueName: 'Bored. (Damansara Jaya)' }, 'games'],
     // A passing "film" in the details is not a movie night.
     [{ vibe: 'creative' as VibeKey, title: 'DDH creative circle vol. 3', venueName: 'Curiosite KL', purpose: 'Bring a sketchbook, a film camera, anything', category: 'cafe' }, 'cafe'],
+  ])('%o', (opts, key) => {
+    expect(activityImage(opts)).toBe(`/images/activities/${key}.jpg`);
+  });
+});
+
+describe('activityImage — Nights of Fright poster', () => {
+  it('shows the event poster for the live plan (share 395AAF96)', () => {
+    expect(activityImage({
+      vibe: 'adventure', title: 'Night of Frights! 12 @ Sunway Lagoon', venueName: 'Sunway Lagoon',
+      purpose: 'Nights of Fright 12 at Sunway Lagoon. Haunted houses, scare zones.', category: 'outdoors',
+    })).toBe('/images/activities/nights-of-fright.jpg');
+  });
+
+  it('keeps other Sunway Lagoon plans off the horror poster', () => {
+    expect(activityImage({ vibe: 'adventure', title: 'Water park day', venueName: 'Sunway Lagoon' }))
+      .not.toBe('/images/activities/nights-of-fright.jpg');
+  });
+});
+
+describe('activityImage — Safehouse Sky Society venue photo', () => {
+  it('shows the venue photo for the live plan (share 31125EB1)', () => {
+    expect(activityImage({
+      vibe: 'chill',
+      title: '☕ SKY HIGH SUNDAY SOCIAL!',
+      venueName: 'Safehouse Sky Society KL',
+      purpose: 'Industrial rooftop cafe, city views, easy chats.',
+      category: 'cafe',
+    })).toBe('/images/activities/safehouse.jpg');
+  });
+
+  it('keeps other rooftop cafes on the cafe photo', () => {
+    expect(activityImage({ vibe: 'chill', title: 'Sunday social', purpose: 'Industrial rooftop cafe', category: 'cafe' }))
+      .toBe('/images/activities/cafe.jpg');
+  });
+});
+
+describe('activityImage — event photos beat the hashtag', () => {
+  // Live tags, 2026-10-27: the Safehouse plan carries #coffee, which maps to cafe.jpg.
+  it.each([
+    [{ vibe: 'chill' as VibeKey, title: '☕ SKY HIGH SUNDAY SOCIAL!', venueName: 'Safehouse Sky Society KL', tags: ['coffee', 'cafe-hub'] }, 'safehouse'],
+    [{ vibe: 'social' as VibeKey, title: '🎭 HALLOWEEN ROOFTOP MASQUERADE', venueName: 'Upper House', tags: ['social'] }, 'halloween-masquerade'],
+    [{ vibe: 'adventure' as VibeKey, title: 'Night of Frights! 12 @ Sunway Lagoon', venueName: 'Sunway Lagoon', tags: ['social'] }, 'nights-of-fright'],
   ])('%o', (opts, key) => {
     expect(activityImage(opts)).toBe(`/images/activities/${key}.jpg`);
   });

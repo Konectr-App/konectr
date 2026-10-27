@@ -9,13 +9,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { usePrimaryCta } from "@/lib/usePrimaryCta";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  getFeedbackTicket,
-  getTicketAttachments,
-} from "@/lib/feedback-api";
+import { getFeedbackTicket } from "@/lib/feedback-api";
 import {
   type FeedbackTicketDetail,
-  type FeedbackAttachment,
   categoryMeta,
   statusMeta,
 } from "@/types/feedback";
@@ -27,10 +23,8 @@ interface Props {
 export default function FeedbackTicketDetailContent({ ticketId }: Props) {
   const cta = usePrimaryCta("feedback_ticket");
   const [ticket, setTicket] = useState<FeedbackTicketDetail | null>(null);
-  const [attachments, setAttachments] = useState<FeedbackAttachment[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     loadTicket();
@@ -46,10 +40,6 @@ export default function FeedbackTicketDetailContent({ ticketId }: Props) {
         return;
       }
       setTicket(data);
-
-      // Load attachments
-      const attachmentData = await getTicketAttachments(ticketId);
-      setAttachments(attachmentData);
     } catch (err) {
       console.error("Failed to load ticket:", err);
       setError("Failed to load feedback. Please try again.");
@@ -210,63 +200,6 @@ export default function FeedbackTicketDetailContent({ ticketId }: Props) {
                     </p>
                   </div>
 
-                  {/* Attachments */}
-                  {attachments.length > 0 && (
-                    <div className="mb-6">
-                      <h3 className="text-sm font-semibold text-foreground mb-3">
-                        Attachments ({attachments.length})
-                      </h3>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        {attachments.map((attachment) => (
-                          <button
-                            key={attachment.id}
-                            onClick={() =>
-                              setSelectedImage(attachment.public_url)
-                            }
-                            className="relative aspect-video rounded-lg overflow-hidden bg-muted border hover:border-primary transition-colors"
-                          >
-                            {attachment.file_type.startsWith("image/") ? (
-                              <img
-                                src={attachment.public_url}
-                                alt={attachment.file_name}
-                                className="w-full h-full object-cover"
-                              />
-                            ) : attachment.file_type.startsWith("video/") ? (
-                              <div className="flex items-center justify-center h-full">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="currentColor"
-                                  className="w-10 h-10 text-muted-foreground"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                              </div>
-                            ) : (
-                              <div className="flex flex-col items-center justify-center h-full p-2">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="currentColor"
-                                  className="w-8 h-8 text-muted-foreground mb-1"
-                                >
-                                  <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z" />
-                                </svg>
-                                <span className="text-xs text-muted-foreground truncate max-w-full">
-                                  {attachment.file_name}
-                                </span>
-                              </div>
-                            )}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
                   {/* Admin Response */}
                   {ticket.admin_response && (
                     <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
@@ -305,36 +238,6 @@ export default function FeedbackTicketDetailContent({ ticketId }: Props) {
       </div>
 
       {/* Image Lightbox */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 text-white hover:text-gray-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-8 h-8"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-          <img
-            src={selectedImage}
-            alt="Attachment"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </main>
   );
 }

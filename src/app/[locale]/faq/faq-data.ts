@@ -78,7 +78,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "How complete does my profile need to be?",
-        answer: "The more complete your profile, the better your matches. To use Pulse (AI matching), you need 100% profile completeness — that means a photo, bio, interests, and availability. Even without Pulse, a complete profile helps other members decide to join your activities."
+        answer: "The more complete your profile, the better your matches. To use Pulse (AI matching), your profile needs to be at least 70% complete. Your name, photo and bio count most; your age, gender, vibes and languages add the rest. Even without Pulse, a complete profile helps other members decide to join your activities."
       }
     ]
   },
@@ -100,7 +100,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What is Pulse and how does AI matching work?",
-        answer: "Pulse is Konectr's AI-powered matching feature. Instead of browsing activities manually, Pulse finds your best match automatically based on your interests, availability, location, and profile. It uses a commit-then-reveal flow: you opt in, Pulse finds a match, and both of you get a celebration reveal with activity details. Requires 100% profile completeness to activate."
+        answer: "Pulse is Konectr's AI-powered matching feature. Instead of browsing activities manually, Pulse finds your best match automatically based on your interests, availability, location, and profile. It uses a commit-then-reveal flow: you opt in, Pulse finds a match, and both of you get a celebration reveal with activity details. It unlocks once your profile is at least 70% complete."
       },
       {
         question: "How do referral links work?",
@@ -166,7 +166,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What are women-only activities?",
-        answer: "Women-only activities are open only to members whose profile gender is Woman. Starters, participants and Konectr can remove anyone from a women-only activity. Misrepresenting your gender to access a women-only space is a Community Guidelines violation and results in immediate suspension. You can change your profile gender once; after that, changes require contacting support. Joining from a shared link without the app? You'll confirm you're a woman before you RSVP, and the exact time and place show once you're in."
+        answer: "Women-only activities are open only to members whose profile gender is Woman. Whoever started the plan can remove someone who isn't a woman, anyone in it can report them, and Konectr reviews every removal. Misrepresenting your gender to access a women-only space is a Community Guidelines violation and results in immediate suspension. You can change your profile gender once; after that, changes require contacting support. Joining from a shared link without the app? You'll confirm you're a woman before you RSVP, and the exact time and place show once you're in."
       },
       {
         question: "Where can I read the Terms of Service and Privacy Policy?",

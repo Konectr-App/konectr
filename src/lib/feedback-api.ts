@@ -2,7 +2,7 @@
 // Proprietary and confidential.
 
 import { supabase } from './supabase';
-import type { FeedbackTicket, FeedbackTicketDetail, FeedbackAttachment, VoteType } from '@/types/feedback';
+import type { FeedbackTicket, FeedbackTicketDetail, VoteType } from '@/types/feedback';
 
 /**
  * Get all public feedback tickets with pagination and filtering
@@ -48,24 +48,6 @@ export async function getFeedbackTicket(ticketId: string): Promise<FeedbackTicke
   }
 
   return Array.isArray(data) ? (data[0] as FeedbackTicketDetail) : (data as FeedbackTicketDetail);
-}
-
-/**
- * Get attachments for a ticket
- */
-export async function getTicketAttachments(ticketId: string): Promise<FeedbackAttachment[]> {
-  const { data, error } = await supabase
-    .from('feedback_attachments')
-    .select('*')
-    .eq('ticket_id', ticketId)
-    .order('created_at', { ascending: true });
-
-  if (error) {
-    console.error('Error fetching ticket attachments:', error);
-    throw error;
-  }
-
-  return (data as FeedbackAttachment[]) || [];
 }
 
 /**
