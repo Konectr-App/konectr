@@ -38,7 +38,8 @@ const KEYWORD_RULES: Array<[RegExp, string]> = [
   // cafe rule would take. safehouse.jpg = founder-supplied venue interior (786×1048).
   [/safehouse sky society/, 'safehouse'],
   // Halloween Rooftop Masquerade @ Upper House (share E812979F, 31 Oct 2026).
-  // halloween-masquerade.jpg = founder-made event poster (1080×1350). Keyed to the
+  // halloween-masquerade.jpg = founder-made event poster (1080×1350), centred on a
+  // black 2400×1350 canvas so object-cover never crops its title or date. Keyed to the
   // event name and above the rooftop rule, so other Upper House / rooftop plans keep
   // the normal rooftop photo.
   [/halloween (?:rooftop )?masquerade/, 'halloween-masquerade'],
