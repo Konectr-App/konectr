@@ -28,7 +28,7 @@ export const brand = {
 
   social: {
     facebook: "https://www.facebook.com/Konectr/about",
-    instagram: "https://www.instagram.com/konectrapp/",
+    instagram: "https://www.instagram.com/konectr.app/",
     twitter: "https://www.x.com/konectrapp",
     linkedin: "https://www.linkedin.com/company/konectr/",
     tiktok: "https://www.tiktok.com/@konectrapp",
