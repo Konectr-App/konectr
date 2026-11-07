@@ -248,15 +248,15 @@ export const faqCategories: FAQCategory[] = [
     faqs: [
       {
         question: "How do I edit my profile?",
-        answer: "Profile tab, then Edit Profile. Update photos, display name, bio, interests, and availability. Tip: 3+ photos and detailed interests = better matches."
+        answer: "Open the You tab and tap the pencil (Edit profile). On versions before 2.1 it's the Profile tab, then Edit Profile. Update photos, display name, bio, interests, and availability. Tip: 3+ photos and detailed interests = better matches."
       },
       {
         question: "Can I pause my account?",
-        answer: "There's no pause option. If you want to step away, turn Konectr's notifications off in your phone's settings. If you want to leave for good, go to Profile, Settings, Delete Account: your profile disappears straight away and you have 30 days to change your mind."
+        answer: "There's no pause option. If you want to step away, turn Konectr's notifications off in your phone's settings. If you want to leave for good, go to You, Settings (the gear), Delete account (Profile, Settings on versions before 2.1): your profile disappears straight away and you have 30 days to change your mind."
       },
       {
         question: "How do I delete my account?",
-        answer: "Profile, Settings, Delete Account (or konectr.app/delete-account). Your profile disappears immediately and you have 30 days to change your mind; after that your personal data, photos, connections and badges are erased. Messages and attendance records stay but are no longer linked to you, and safety reports are kept — the full list is on the delete-account page. Having issues? Reach out to hello@konectr.app first."
+        answer: "You, Settings (the gear), Delete account. On versions before 2.1 it's Profile, Settings, Delete Account. You can also use konectr.app/delete-account. Your profile disappears immediately and you have 30 days to change your mind; after that your personal data, photos, connections and badges are erased. Messages and attendance records stay but are no longer linked to you, and safety reports are kept — the full list is on the delete-account page. Having issues? Reach out to hello@konectr.app first."
       },
       {
         question: "Why am I not seeing many activities?",

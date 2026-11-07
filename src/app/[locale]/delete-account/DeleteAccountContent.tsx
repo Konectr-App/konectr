@@ -15,9 +15,9 @@ import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 
 const inApp = [
-  "Open Konectr and go to your Profile",
-  "Tap Settings",
-  "Scroll to the bottom and tap Delete Account",
+  "Open Konectr and go to the You tab (Profile on versions before 2.1)",
+  "Tap Settings (the gear)",
+  "Scroll to the bottom and tap Delete account",
   "Confirm — your profile is hidden from everyone straight away",
 ];
 
@@ -213,8 +213,9 @@ export function DeleteAccountContent() {
           <p className="text-muted-foreground">
             You can download your data from{" "}
             <span className="font-medium">
-              Settings → Download Your Data → Export Data
+              Settings → Your data → Download my data
             </span>{" "}
+            (on versions before 2.1: Settings → Download Your Data → Export Data){" "}
             before deleting, or ask us at{" "}
             <a
               href="mailto:privacy@konectr.app?subject=Data%20export%20request"

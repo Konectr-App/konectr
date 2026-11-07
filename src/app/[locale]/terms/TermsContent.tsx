@@ -205,7 +205,7 @@ const sections = [
       {
         subtitle: "You May Terminate Anytime",
         content:
-          "Delete your account from Profile > Settings > Delete Account, or at konectr.app/delete-account. Your profile is hidden immediately and you have 30 days to change your mind; after that your personal data is erased. Messages, attendance records and photos you published to This Week are kept but detached from you, and safety reports are retained. The full list is at konectr.app/delete-account.",
+          "Delete your account from You > Settings > Delete account (Profile > Settings on versions before 2.1), or at konectr.app/delete-account. Your profile is hidden immediately and you have 30 days to change your mind; after that your personal data is erased. Messages, attendance records and photos you published to This Week are kept but detached from you, and safety reports are retained. The full list is at konectr.app/delete-account.",
       },
       {
         subtitle: "Effects of Termination",
