@@ -1,5 +1,7 @@
 # Konectr Bug Log
 
+> Since 2026-10-05 founder reports go straight to GitHub Issues. Index of the last 30 days: `docs/FOUNDER_ISSUES.md`.
+
 **Capture inbox only (since 2026-10-01).** The tracker for every bug and task is GitHub Issues in
 `Konectr/konectr-mvp` (`Development/docs/ENGINEERING.md`). Log here only when you can't reach GitHub (phone
 without the GitHub app, a cloud session without issue access). The next Mac session turns each Open entry
