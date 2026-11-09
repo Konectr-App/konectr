@@ -131,7 +131,7 @@ export function ContactContent() {
                       <option value="">Select a topic</option>
                       <option value="general">General Inquiry</option>
                       <option value="partnership">Partnership</option>
-                      <option value="venue">Venue Partnership</option>
+                      <option value="venue">Venues</option>
                       <option value="press">Press & Media</option>
                       <option value="support">Support</option>
                       <option value="feedback">Feedback</option>
