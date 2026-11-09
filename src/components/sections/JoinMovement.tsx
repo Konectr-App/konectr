@@ -91,7 +91,7 @@ export function JoinMovement() {
         >
           {[
             { emoji: "🌟", labelKey: "earlyAdopters" },
-            { emoji: "🏢", labelKey: "partnerVenues" },
+            { emoji: "🏢", labelKey: "klVenues" },
             { emoji: "⏱️", labelKey: "realMoments" },
           ].map((stat, index) => (
             <motion.div

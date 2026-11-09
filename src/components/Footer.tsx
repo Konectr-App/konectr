@@ -82,7 +82,7 @@ export function Footer() {
             <h4 className="font-semibold text-secondary mb-4">{tFooter("resources")}</h4>
             <ul className="space-y-3">
               {[
-                { key: "partnerWithUs", href: "/contact" },
+                { key: "forVenues", href: "/contact" },
                 { key: "communityGuidelines", href: "/safety" },
                 { key: "safetyFirst", href: "/safety" },
                 { key: "faqs", href: "/faq" },

@@ -17,9 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildPageMetadata({
     locale,
     path: "/contact",
-    title: "Contact Konectr — Partners, Press & Support",
+    title: "Contact Konectr — Venues, Press & Support",
     description:
-      "Get in touch with the Konectr team in Kuala Lumpur: venue partnerships, press, feedback, and support.",
+      "Get in touch with the Konectr team in Kuala Lumpur: venues, press, feedback, and support.",
   });
 }
 
