@@ -106,7 +106,7 @@ const sections = [
         category: "Commercial & Spam",
         items: [
           "Solicit money, donations, or financial contributions",
-          "Promote businesses or commercial services (unless approved venue partners)",
+          "Promote businesses or commercial services (unless Konectr approves it in writing)",
           "Send spam, mass messages, or generic invitations",
           "Engage in MLM, pyramid schemes, or similar activities",
         ],
@@ -264,7 +264,7 @@ export function TermsContent() {
       <section className="pt-12 pb-4">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-muted-foreground text-sm">
-            Last Updated: October 21, 2026 &middot; Effective Date: December
+            Last Updated: November 10, 2026 &middot; Effective Date: December
             10, 2025
           </p>
         </div>

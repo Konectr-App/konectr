@@ -247,7 +247,7 @@ Ask follow-up questions. Be genuinely curious. The best conversationalists are g
 
 ## Our Favorite Cafe Characteristics
 
-When we're picking partner venues for Konectr, here's what we look for:
+When we pick a café for a Konectr plan, here's what we look for:
 
 - **Comfortable seating**: Couches, armchairs, not just hard chairs
 - **Good lighting**: Natural light is ideal
@@ -498,13 +498,9 @@ If you started a Konectr meetup:
 - Make sure everyone feels included
 - Keep an eye out for uncomfortable situations
 
-## Our Safety Team
+## Who Reads Your Reports
 
-We have dedicated team members focused on community safety:
-- Monitoring for concerning patterns
-- Reviewing reports
-- Updating safety features
-- Partnering with venues on safety protocols
+Every report is read by a person, and we keep improving safety features.
 
 ## Questions or Concerns?
 
