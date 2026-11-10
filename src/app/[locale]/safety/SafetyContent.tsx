@@ -249,8 +249,8 @@ export function SafetyContent() {
                 className="rounded-full border-white text-white hover:bg-white/10 font-semibold px-8"
                 asChild
               >
-                <Link href="mailto:safety@konectr.app">
-                  safety@konectr.app
+                <Link href="mailto:support@konectr.app">
+                  support@konectr.app
                 </Link>
               </Button>
             </div>

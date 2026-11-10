@@ -411,7 +411,7 @@ Emojis in FAQ content match `konectr_mobile/lib/constants/category_reference.dar
 1. **How We Keep You Safe** - 6 feature cards (grid layout)
 2. **Community Guidelines** - Be Respectful, Be Honest, Be Safe
 3. **Safety Tips** - Before, During, After meetup tips
-4. **Need Help?** - Contact support CTA + safety@konectr.app
+4. **Need Help?** - Contact support CTA + support@konectr.app
 
 ---
 

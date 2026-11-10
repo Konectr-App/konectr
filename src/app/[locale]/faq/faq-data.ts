@@ -146,7 +146,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What if someone makes me uncomfortable?",
-        answer: "Report in-app anytime—during or after an activity. Block instantly. Your safety comes first; leave if needed. We review urgent reports within hours, all reports within 24 hours. Serious violations = permanent bans."
+        answer: "Report in-app anytime—during or after an activity. Block instantly. Your safety comes first; leave if needed. Every report is read by a person. Serious violations = permanent bans."
       },
       {
         question: "Can I remain anonymous?",
@@ -158,7 +158,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What happens if I report someone?",
-        answer: "Reports go to our safety team immediately. Review within 24 hours, faster for urgent issues. Outcomes range from warnings to permanent bans. Reports are confidential—they won't know who reported."
+        answer: "Every report is read by a person. Outcomes range from warnings to permanent bans. Reports are confidential—they won't know who reported."
       },
       {
         question: "What are the community guidelines?",
@@ -304,7 +304,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "How do I contact support?",
-        answer: "Email hello@konectr.app. Response times: general questions within 24 hours, safety issues within hours, technical bugs same business day. Include screenshots and details."
+        answer: "Email hello@konectr.app. Response times: general questions within 24 hours, technical bugs same business day. Include screenshots and details."
       },
       {
         question: "I have an idea/feedback for Konectr!",
