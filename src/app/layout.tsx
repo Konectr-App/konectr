@@ -3,51 +3,9 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
-import {
-  Noto_Sans_SC,
-  Noto_Sans_JP,
-  Noto_Sans_KR,
-  Noto_Sans_Thai,
-} from "next/font/google";
 import "./globals.css";
 import { ATTRIBUTION_SNIPPET } from "@/lib/attribution";
 import AdsConsent from "@/components/AdsConsent";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
-});
-
-// CJK and special script fonts
-const notoSansTC = Noto_Sans_SC({
-  variable: "--font-noto-tc",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-const notoSansJP = Noto_Sans_JP({
-  variable: "--font-noto-jp",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-const notoSansKR = Noto_Sans_KR({
-  variable: "--font-noto-kr",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-const notoSansThai = Noto_Sans_Thai({
-  variable: "--font-noto-thai",
-  subsets: ["latin", "thai"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
-
 
 export const metadata: Metadata = {
   title: "Konectr - Real adventures with real people, right now",
@@ -85,6 +43,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link
+          rel="preload"
+          href="/fonts/inter-latin-wght-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -106,7 +71,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${inter.variable} ${notoSansTC.variable} ${notoSansJP.variable} ${notoSansKR.variable} ${notoSansThai.variable} font-sans antialiased`}
+        className="font-sans antialiased"
       >
         {children}
         {/* Ad pixels + consent banner — renders nothing until pixel env IDs are set */}

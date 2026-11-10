@@ -455,9 +455,6 @@ All Konectr meetups happen at public venues – cafes, parks, gyms, restaurants.
 ### Check-In System
 Let a friend know where you are with our optional check-in feature.
 
-### Real-Time Support
-Our safety team is available during meetup hours if anything feels off.
-
 ## Community Standards
 
 ### Zero Tolerance
@@ -466,9 +463,6 @@ We have zero tolerance for:
 - Discriminatory behavior
 - Dishonest profiles
 - Unsafe behavior
-
-### Quick Action
-Reports are reviewed within hours, not days. We act fast.
 
 ### Transparency
 If someone is removed, we let affected users know (while protecting privacy).
@@ -506,7 +500,7 @@ Every report is read by a person, and we keep improving safety features.
 
 If you ever have a safety concern, reach out immediately:
 - In-app: Report button on any profile or meetup
-- Email: safety@konectr.app
+- Email: support@konectr.app
 - Emergency: Contact local authorities
 
 Your safety is our priority. Always.

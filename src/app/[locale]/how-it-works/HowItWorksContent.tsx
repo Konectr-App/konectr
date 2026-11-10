@@ -64,7 +64,7 @@ const faqs = [
   {
     question: "How do I know the people I meet are safe?",
     answer:
-      "Every account is verified with a one-time code before it can join anything, and all meetups happen at public venues. Reports get a first response within hours, and repeat violations trigger our three-strike system.",
+      "Every account is verified with a one-time code before it can join anything, and all meetups happen at public venues. Every report is read by a person, and repeat violations trigger our three-strike system.",
   },
   {
     question: "What if I'm shy or introverted?",
