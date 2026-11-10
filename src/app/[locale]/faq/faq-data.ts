@@ -286,7 +286,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What new features are coming?",
-        answer: "Near-term: more Malaysian cities, venue partnerships. Future: AI recommendations, weather-aware suggestions, group planning tools. What stays: activity-first matching, small groups, badges (not ratings)."
+        answer: "Near-term: more Malaysian cities. Future: AI recommendations, weather-aware suggestions, group planning tools. What stays: activity-first matching, small groups, badges (not ratings)."
       }
     ]
   },
