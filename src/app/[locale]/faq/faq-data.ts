@@ -36,7 +36,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "Is Konectr available in my city?",
-        answer: "Konectr is currently available in Kuala Lumpur, Malaysia only. We're starting with one city to build a strong, active community before expanding. Next cities planned: more Malaysian cities, then Southeast Asia. Follow @konectrapp for news on new cities."
+        answer: "Konectr is currently available in Kuala Lumpur, Malaysia only. We're starting with one city to build a strong, active community before expanding. Next cities planned: more Malaysian cities, then Southeast Asia. Follow @konectr.app on Instagram for news on new cities."
       },
       {
         question: "How is Konectr different from Meetup or Bumble BFF?",
@@ -48,7 +48,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What kind of activities can I do on Konectr?",
-        answer: "Six categories: Chill (coffee, brunch), Active (fitness, hiking, running), Creative (art, photography, cooking), Social (happy hours, board games), Focus (language exchange, networking), and Adventure (day trips, exploring). You can also create custom activities."
+        answer: "Pick from 50+ activities, from #running and #badminton to #karaoke, #pottery and #escaperoom. Want something else? Use #social and give your plan its own title."
       },
       {
         question: "Can I use Konectr for dating?",
@@ -78,7 +78,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "How complete does my profile need to be?",
-        answer: "The more complete your profile, the better your matches. To use Pulse (AI matching), your profile needs to be at least 70% complete. Your name, photo and bio count most; your age, gender, vibes and languages add the rest. Even without Pulse, a complete profile helps other members decide to join your activities."
+        answer: "The more complete your profile, the better your matches. To use Pulse, our one-tap match, your profile needs to be at least 70% complete. Your name, photo and bio count most; your age, gender and languages add the rest. Even without Pulse, a complete profile helps other members decide to join your activities."
       }
     ]
   },
@@ -92,15 +92,15 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "Can I start my own activities?",
-        answer: "Yes! Anyone can start an activity — there's no host role on Konectr. Pick a venue, set your group size, choose a time, and publish. Anyone who can see it joins instantly, and you're all equal members of the plan."
+        answer: "Yes! Anyone can start an activity. Pick a venue, set your group size, choose a time, and publish. Anyone who can see it joins instantly, and everyone who joins is an equal member of the plan."
       },
       {
         question: "How does the matching work?",
-        answer: "Pick your vibe, time slot, and venue. Konectr finds people planning the same activity at the same time nearby — 10km by default, and you can widen the search up to 50km. You can also use Pulse — our AI matching feature — which automatically finds your best match on venue type, time, distance, and vibe. Either way, every match leads to a real meetup."
+        answer: "Say what you're up for, when and where. Konectr finds people nearby planning the same activity at the same time. You can also use Pulse, our one-tap match, which finds your best match on venue type, time and distance. Either way, every match leads to a real meetup."
       },
       {
-        question: "What is Pulse and how does AI matching work?",
-        answer: "Pulse is Konectr's AI-powered matching feature. Instead of browsing activities manually, Pulse finds your best match automatically based on your interests, availability, location, and profile. It uses a commit-then-reveal flow: you opt in, Pulse finds a match, and both of you get a celebration reveal with activity details. It unlocks once your profile is at least 70% complete."
+        question: "What is Pulse and how does it work?",
+        answer: "Pulse is Konectr's one-tap match. Instead of browsing activities manually, Pulse finds your best match automatically based on your interests, availability, location, and profile. It uses a commit-then-reveal flow: you opt in, Pulse finds a match, and both of you get a celebration reveal with activity details. It unlocks once your profile is at least 70% complete."
       },
       {
         question: "How do referral links work?",
@@ -111,16 +111,16 @@ export const faqCategories: FAQCategory[] = [
         answer: "Share it with your Konectr Circle, or keep it open for up to 7 days. Others might plan the same thing later. Plenty of good plans started with one person—then others joined."
       },
       {
-        question: "What are time slots and how do they work?",
-        answer: "Instead of exact times, pick a window: Morning (9AM-12PM), Afternoon (12PM-3PM), Late Afternoon (3PM-6PM), Evening (6PM-9PM), or Night (9PM-12AM). Coordinate specifics through chat. Plan up to 7 days ahead."
+        question: "How do plan times work?",
+        answer: "Every plan has a time range, like 7-9 AM. Set the range when you start a plan, or pick a part of the day: morning, afternoon, evening or night. Sort out the details in the plan's chat. Plan up to 7 days ahead."
       },
       {
         question: "What's a 'Konectr Circle'?",
-        answer: "Your friend network within the app — people you've connected with. Anyone can add anyone to their Circle (no mutual activity required). Circle perks: permanent 1:1 chat, see when they create activities, broadcast your plans to them."
+        answer: "Your friend network in the app. Send anyone a Circle request, no shared activity needed. Once they accept, you're in each other's Circle. Circle perks: a permanent 1:1 chat, seeing when they start a plan, and sharing your plans with them."
       },
       {
         question: "What happens after an activity ends?",
-        answer: "Confirm you met and everyone who turned up earns XP and progress toward badges. You can add people you got on with to your Circle. The group chat stays open for 48 hours after the end time, so you can sort out photos and next plans, then it closes."
+        answer: "Confirm you met and everyone who turned up earns XP and progress toward badges. You can send a Circle request to people you got on with. The group chat stays open for 48 hours after the end time, so you can sort out photos and next plans, then it closes."
       },
       {
         question: "What can I do in the activity chat?",
@@ -150,15 +150,15 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "Can I remain anonymous?",
-        answer: "Your full name, phone, email, and exact location are never shared. You control your display name, photos, and bio. Your photo is only shown to people you share a plan, a chat or your Circle with; everyone else sees your initials. Chat stays in-app."
+        answer: "Your full name, phone and email are never shared, and plans show a venue, never your position. You only share your location in a chat if you choose to, and only for 15 minutes. You control your display name, photos, and bio. Chat stays in-app."
       },
       {
         question: "Is my data safe?",
-        answer: "All data is encrypted in transit and at rest, and stored in Singapore. We never sell your data, and you can download or delete everything we hold at any time from Settings."
+        answer: "All data is encrypted in transit and at rest, and stored in Singapore. We never sell your data, and you can download or delete everything we hold at any time from Settings. You can also lock Konectr with Face ID, Touch ID or your fingerprint, if you like."
       },
       {
         question: "What happens if I report someone?",
-        answer: "Every report is read by a person. Outcomes range from warnings to permanent bans. Reports are confidential—they won't know who reported."
+        answer: "Every report is read by a person. Outcomes range from warnings to permanent bans. Reports are confidential: they won't know who reported."
       },
       {
         question: "What are the community guidelines?",
@@ -180,7 +180,7 @@ export const faqCategories: FAQCategory[] = [
     faqs: [
       {
         question: "How many people are typically at an activity?",
-        answer: "Whoever starts the plan sets the group size, anywhere from a one-on-one to 20 people. Most plans are small. There's no minimum — a plan stays live as long as at least one person is still in."
+        answer: "Whoever starts the plan sets the group size, from a one-on-one up to 5 people. Members with the Captain or Originals badge can open plans of up to 20. Most plans are small. There's no minimum: a plan stays live as long as at least one person is still in."
       },
       {
         question: "What if I need to cancel?",
@@ -196,11 +196,11 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "How do I know what to expect at an activity?",
-        answer: "Every listing shows the venue, the time, the group size, the vibe (Chill, Active, Social, Creative, Focus, Adventure) and a note from whoever started it."
+        answer: "Every listing shows the activity, the venue, the time, the group size and a note from whoever started it."
       },
       {
         question: "What's the etiquette for a first activity?",
-        answer: "Arrive on time, introduce yourself to the group, put your phone away, ask questions and listen. After: add people you vibed with to your Circle."
+        answer: "Arrive on time, introduce yourself to the group, put your phone away, ask questions and listen. After: send a Circle request to people you got on with."
       },
       {
         question: "Can I suggest new venue types?",
@@ -212,7 +212,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "Can I join an activity that's already in progress?",
-        answer: "No — once an activity's time slot has started, it's no longer open for new joiners. This protects the experience for everyone already there. Keep an eye on upcoming activities and join before they start. You can also create your own activity for a time that works for you."
+        answer: "No. Once a plan's time window has started, it's no longer open for new joiners. This protects the experience for everyone already there. Keep an eye on upcoming activities and join before they start. You can also create your own activity for a time that works for you."
       }
     ]
   },
@@ -226,7 +226,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What badges can I earn?",
-        answer: "Badges come in families: Social (people you meet), Explorer (venues you visit), Activity (plans you turn up to), Streak (consistency), Starter (activities you start), plus Special one-offs like KL Champion and Early Adopter. Try all six vibes to grow your collection."
+        answer: "Badges come in families: Social (people you meet), Explorer (venues you visit), Activity (plans you turn up to), Streak (consistency), Starter (activities you start), plus Special one-offs like KL Champion and Early Adopter."
       },
       {
         question: "How do badges help me?",
@@ -260,11 +260,11 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "Why am I not seeing many activities?",
-        answer: "Try: expanding search radius (up to 50km), adding more availability slots, broadening vibe filters. Still quiet? You might be in a new area—create an activity yourself and others will join."
+        answer: "Try widening Explore's distance filter and clearing your other filters. Still quiet? You might be in a new area. Start a plan yourself and others can join."
       },
       {
         question: "How do I change my notification settings?",
-        answer: "Settings, Notifications. Toggle match alerts, activity suggestions, messages, reminders, and Circle updates. Keep match and message notifications on to avoid missing connections."
+        answer: "You, Settings (the gear), Notifications. Turn Reminders, Someone joins or matches, Messages, Circle plans, News from Konectr and New features on or off. Keep Someone joins or matches and Messages on so you don't miss anyone."
       },
       {
         question: "How do I share my Konectr profile or referral link?",
@@ -278,7 +278,7 @@ export const faqCategories: FAQCategory[] = [
     faqs: [
       {
         question: "Are there any paid features?",
-        answer: "Currently everything is free. We may add optional premium features later (priority matching, advanced filters), but core functionality—meeting people—stays free."
+        answer: "Everything is free today. Starting and joining plans, finding people, chat, Pulse and safety stay free, always."
       },
       {
         question: "Is Konectr on Android?",
@@ -286,7 +286,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What new features are coming?",
-        answer: "Near-term: more Malaysian cities. Future: AI recommendations, weather-aware suggestions, group planning tools. What stays: activity-first matching, small groups, badges (not ratings)."
+        answer: "Near-term: more Malaysian cities. What stays: activity-first matching, small groups, badges (not ratings)."
       }
     ]
   },
@@ -296,11 +296,11 @@ export const faqCategories: FAQCategory[] = [
     faqs: [
       {
         question: "The app is crashing/slow. What do I do?",
-        answer: "Force close and restart. Make sure you have the latest version. Restart your phone. Check your internet. Still broken? Email hello@konectr.app with device model, iOS version, and screenshots."
+        answer: "Force close and restart. Make sure you have the latest version. Restart your phone. Check your internet. Still broken? Email hello@konectr.app with your phone model, iOS or Android version, and screenshots."
       },
       {
         question: "I'm not receiving notifications. Help!",
-        answer: "Check: Settings, Notifications (toggles on). iOS Settings, Konectr, Notifications (allowed). Do Not Disturb (off for Konectr). Still nothing? Reinstall the app."
+        answer: "Check Konectr's Settings, Notifications (toggles on). On iPhone: Settings, Konectr, Notifications (allowed). On Android: Settings, Apps, Konectr, Notifications (allowed). Do Not Disturb off for Konectr. Still nothing? Reinstall the app."
       },
       {
         question: "How do I contact support?",

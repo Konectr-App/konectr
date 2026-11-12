@@ -71,7 +71,7 @@ export const APP_STRUCTURED_DATA = {
   downloadUrl: [IOS_STORE_URL, ANDROID_STORE_URL],
   installUrl: [IOS_STORE_URL, ANDROID_STORE_URL],
   description:
-    "Konectr is an activity-first social meetup app, live in Kuala Lumpur. Declare an intent — what activity (coffee, hike, gym, dinner), what time, what area, what vibe — and match with others doing the same thing nearby. No swiping; badges, not star ratings.",
+    "Konectr is an activity-first social meetup app, live in Kuala Lumpur. Say what you're up for (coffee, a hike, the gym, dinner), when and where, and match with people nearby who want the same thing. No swiping; badges, not star ratings.",
   offers: {
     "@type": "Offer",
     price: "0",

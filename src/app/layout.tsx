@@ -8,9 +8,9 @@ import { ATTRIBUTION_SNIPPET } from "@/lib/attribution";
 import AdsConsent from "@/components/AdsConsent";
 
 export const metadata: Metadata = {
-  title: "Konectr - Real adventures with real people, right now",
+  title: "Konectr: Your plan. New people. Nearby.",
   description:
-    "Stop scrolling. Start living. Connect with people who share your vibe for spontaneous real-world adventures.",
+    "Stop scrolling. Start living. Meet new people in Kuala Lumpur over real activities, from coffee to hikes.",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
     { media: "(prefers-color-scheme: dark)", color: "#1F1F1F" },

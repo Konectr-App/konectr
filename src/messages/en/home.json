@@ -3,7 +3,7 @@
     "launching": "Launching {date}",
     "betaLive": "Now on the App Store and Google Play",
     "headline": "Stop scrolling.\nStart living.",
-    "subtext": "Real adventures with real people, right now.",
+    "subtext": "Your plan. New people. Nearby.",
     "joinWaitlist": "Get the app",
     "seeHowItWorks": "See How It Works",
     "activities": {
@@ -31,7 +31,7 @@
     "steps": {
       "step1": {
         "number": "01",
-        "title": "Pick your vibe",
+        "title": "Pick your activity",
         "description": "Coffee chat? Gym session? Trail hike? Choose what you're feeling."
       },
       "step2": {
@@ -47,7 +47,7 @@
     }
   },
   "findYourVibe": {
-    "title": "Find your tribe by vibe",
+    "title": "Find your people by activity",
     "subtitle": "Whatever moves you, we'll match you with people who get it",
     "downloadApp": "Download the app",
     "vibes": {

@@ -219,7 +219,7 @@ export default function HyroxContent({
             <a href="https://konectr.app" className="hover:text-[#FF774D] transition-colors">
               konectr.app
             </a>{' '}
-            · The Offline First App
+            · Your plan. New people. Nearby.
           </p>
         </footer>
       </div>

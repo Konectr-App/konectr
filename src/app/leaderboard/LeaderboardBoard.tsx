@@ -348,13 +348,8 @@ export default function LeaderboardBoard({
             How ranking works
           </div>
           <p className="mt-2 text-[13px] leading-[1.5] text-[#444]">
-            Ranked by <b>completed activities</b> — meetups confirmed in the app. Points break ties:
+            Ranked by <b>completed activities</b>. Points come from activities Konectr confirms you attended.
           </p>
-          <ul className="mt-2 space-y-1.5 text-[13px] leading-[1.5] text-[#444]">
-            <li>✅ Both of you confirm the meetup in the app — <b>3 pts each</b></li>
-            <li>🕐 You confirm, they stay silent — <b>2 pts for you</b></li>
-            <li>🏆 Weekly #1 wins the limited-edition <b>KL Champion</b> badge</li>
-          </ul>
           <p className="mt-3 text-[12px] leading-[1.5] text-[#6B6B6B]">
             Opt in from Konectr → Settings → Privacy. Only your first name, photo and
             weekly count appear here — nothing else, ever.
@@ -365,7 +360,7 @@ export default function LeaderboardBoard({
           <a href="https://konectr.app" className="hover:text-[#FF774D] transition-colors">
             konectr.app
           </a>{' '}
-          · The Offline First App
+          · Your plan. New people. Nearby.
         </footer>
       </div>
 

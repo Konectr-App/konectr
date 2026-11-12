@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description,
     alternates: { canonical: url },
     openGraph: { title, description, type: 'website', url, images },
-    twitter: { card: 'summary_large_image', title, description, images, site: '@konectrapp' },
+    twitter: { card: 'summary_large_image', title, description, images },
   };
 }
 

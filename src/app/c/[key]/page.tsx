@@ -102,7 +102,7 @@ export default async function CampaignHubPage({ params }: Params) {
           {campaign.disclaimer}
         </p>
         <p className="mt-4 text-center text-xs text-black/40">
-          konectr.app · The Offline First App
+          konectr.app · Your plan. New people. Nearby.
         </p>
       </div>
     </main>

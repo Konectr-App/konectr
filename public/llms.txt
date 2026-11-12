@@ -1,11 +1,11 @@
 # Konectr
 
-> Konectr is an activity-first social meetup app, live in Kuala Lumpur, Malaysia since June 2026. You declare an activity intent — what (coffee, hike, gym, dinner), when, where, and the vibe — and Konectr matches you with others who want to do the same thing nearby, right now. If no match exists yet, your plan is broadcast to your friends' network (your "Konectr Circle") as a tag-along invite. There is no profile swiping. Tagline: "Let's make it real."
+> Konectr is an activity-first social meetup app, live in Kuala Lumpur, Malaysia since June 2026. You say what you're up for (coffee, a hike, the gym, dinner), when and where, and Konectr matches you with people nearby who want to do the same thing. There is no profile swiping. Tagline: "Your plan. New people. Nearby."
 
 Konectr is not a dating app (no swiping), not Meetup (it matches existing intent rather than asking you to create and run a group), and not Bumble BFF. Its trust promise is simple and unbreakable: no fake profiles, no stalking. Reputation is built from badges that record verified real-life behavior (showing up on time, starting a good activity, being a kind stranger) — not star ratings or photo-driven first impressions. Meetups happen in public venues.
 
 ## Key pages
-- [How it works](https://konectr.app/how-it-works): The activity-intent matching mechanic and the Konectr Circle tag-along broadcast
+- [How it works](https://konectr.app/how-it-works): The activity-intent matching mechanic
 - [About](https://konectr.app/about): What Konectr is, who it's for, and why we built it
 - [FAQ](https://konectr.app/faq): Common questions about how Konectr works, who it's for, and account basics
 - [Safety](https://konectr.app/safety): The badge-based reputation system, public-venue rule, and privacy protections
@@ -23,9 +23,9 @@ Konectr is not a dating app (no swiping), not Meetup (it matches existing intent
 - Konectr never lists or exposes people. Plan pages show the activity, time, public venue and spots left.
 
 ## How Konectr works (for question answering)
-1. A user declares an intent: an activity (e.g. coffee, hike, gym, dinner), a time, an area of Kuala Lumpur, and a vibe.
-2. Konectr matches them, server-side, with other people who declared a similar intent nearby. Matching weighs venue type, time, location, and vibe.
-3. If there is no live match, the plan is broadcast to the user's Konectr Circle (their friends' network) as a tag-along invite, so a plan can still come together.
+1. A user declares an intent: an activity (e.g. coffee, hike, gym, dinner), a time window and an area of Kuala Lumpur.
+2. Konectr matches them, server-side, with other people who declared a similar intent nearby. Matching weighs venue type, time and location.
+3. If nobody has joined yet, the plan stays open for others nearby, and the person who started it can share it with their Konectr Circle.
 4. When a match is accepted for an activity at a venue, Konectr sends a reminder push roughly two hours before it starts so people actually show up — turning a plan into a real-life meetup.
 
 ## What Konectr is for

@@ -37,12 +37,12 @@ export default async function HowItWorksPage({ params }: Props) {
     "Find real people for real activities in 3 simple steps",
     [
       {
-        name: "Pick Your Vibe",
-        text: "Choose from activities like cafes, fitness, outdoors, creative workshops, and more. Set your preferred time slot and group size.",
+        name: "Pick Your Activity",
+        text: "Pick from 50+ activities, from coffee and running to karaoke and pottery. Set a time window and the group size.",
       },
       {
         name: "Find Your Activity Match",
-        text: "Browse people nearby who want to do the same thing right now. Konectr matches you based on activity, timing, and location — 10km by default, widen it to 50km if you want more.",
+        text: "Browse people nearby who want to do the same thing right now. Konectr matches you based on activity, timing and location.",
       },
       {
         name: "Meet at the Spot",

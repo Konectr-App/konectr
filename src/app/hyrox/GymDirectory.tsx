@@ -184,7 +184,7 @@ export default function GymDirectory({
       {/* Nominative-use guard: the tier distinction must stay legible now that
           the "not affiliated" tier header is gone. */}
       <p className="mt-1 text-[12px] leading-[1.5] text-[#9E9E9E]">
-        Certified = official HYROX partner gym. HYROX-style gyms run similar
+        Certified = official HYROX gym. HYROX-style gyms run similar
         training and are not affiliated.
       </p>
 

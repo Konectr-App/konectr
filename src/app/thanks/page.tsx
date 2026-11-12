@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 import ThanksContent from './ThanksContent';
 
 export const metadata: Metadata = {
-  title: 'You’re on the list — Konectr',
+  title: 'Thanks | Konectr',
   robots: { index: false, follow: false },
 };
 

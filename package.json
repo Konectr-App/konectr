@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run check:copy",
     "build": "next build",
+    "check:copy": "node scripts/check-copy.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",

@@ -27,7 +27,7 @@ type Props = {
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: {
-      default: "Konectr - Real Adventures with Real People",
+      default: "Konectr: Your plan. New people. Nearby.",
       template: "%s | Konectr",
     },
     description:

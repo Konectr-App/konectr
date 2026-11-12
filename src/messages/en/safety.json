@@ -7,7 +7,6 @@
   "features": {
     "title": "How We Keep You Safe",
     "subtitle": "Multiple layers of protection so you can focus on making real connections",
-    "comingSoonLabel": "Coming Soon",
     "items": {
       "phoneVerified": {
         "title": "Verified Sign-In",
@@ -27,11 +26,11 @@
       },
       "privateMessaging": {
         "title": "Private by Default",
-        "description": "Chat stays in-app and your phone number is never shared. Your photo is only shown to people you share a plan, a chat or your Circle with."
+        "description": "Chat stays in-app and your phone number is never shared."
       },
-      "photoVerification": {
-        "title": "Photo Verification",
-        "description": "AI-powered selfie matching to prevent catfishing."
+      "appLock": {
+        "title": "App Lock",
+        "description": "Lock Konectr with Face ID, Touch ID or your fingerprint, so only you can open it."
       },
       "womenOnly": {
         "title": "Women-Only Activities",

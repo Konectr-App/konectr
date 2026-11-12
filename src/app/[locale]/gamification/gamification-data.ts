@@ -75,7 +75,7 @@ export const badgeCategories = [
   {
     emoji: "🎯",
     name: "Activity",
-    description: "Turn up to plans, across vibes and time slots",
+    description: "Turn up to plans",
     example: "First Activity",
   },
   {

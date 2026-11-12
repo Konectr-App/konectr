@@ -13,13 +13,13 @@ import { useState } from "react";
 const steps = [
   {
     number: "01",
-    title: "Pick Your Vibe",
+    title: "Pick Your Activity",
     description:
       "Choose what you're in the mood for. Coffee chat? Trail run? Board game night? Browse activities happening near you or create your own.",
     details: [
-      "Browse by category: Fitness, Food, Games, Outdoors, Arts & more",
+      "Pick from 50+ activities, from #running to #karaoke",
       "See what's happening right now or later today",
-      "Filter by location, time, and group size",
+      "Filter by kind of place, distance and places with plans this week",
     ],
     icon: "✨",
     gradient: "from-primary to-orange-500",
@@ -29,10 +29,9 @@ const steps = [
     number: "02",
     title: "Find Your Activity Match",
     description:
-      "No more back-and-forth scheduling. See real people who are available at the same time as you, matched by shared interests and vibe.",
+      "No more back-and-forth scheduling. See real people who are available at the same time as you, matched by activity, time and place.",
     details: [
       "See who's up for the same run, climb or coffee right now",
-      "Vibe-based matching for better connections",
       "Small groups — whoever starts the plan picks the size",
     ],
     icon: "⚡",
@@ -79,7 +78,7 @@ const faqs = [
   {
     question: "What cities is Konectr available in?",
     answer:
-      "Kuala Lumpur, for now. We're building one strong community before we expand to more Malaysian cities. Follow @konectrapp for news on new cities.",
+      "Kuala Lumpur, for now. We're building one strong community before we expand to more Malaysian cities. Follow @konectr.app on Instagram for news on new cities.",
   },
   {
     question: "How is this different from Meetup or Bumble BFF?",
@@ -180,7 +179,7 @@ export function HowItWorksContent() {
               {
                 icon: "👥",
                 title: "Small Groups",
-                desc: "From a one-on-one up to 20 — the starter picks",
+                desc: "From a one-on-one up to 5, the starter picks. Up to 20 with a Captain or Originals badge.",
               },
               {
                 icon: "📍",

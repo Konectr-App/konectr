@@ -19,7 +19,7 @@ const contactMethods = [
   {
     icon: "📱",
     title: "Social Media",
-    value: "@konectrapp",
+    value: "@konectr.app on Instagram, Threads and TikTok",
     href: brand.social.instagram,
   },
 ];
@@ -130,7 +130,6 @@ export function ContactContent() {
                     >
                       <option value="">Select a topic</option>
                       <option value="general">General Inquiry</option>
-                      <option value="partnership">Partnership</option>
                       <option value="venue">Venues</option>
                       <option value="press">Press & Media</option>
                       <option value="support">Support</option>
@@ -211,7 +210,6 @@ export function ContactContent() {
                 <div className="flex gap-3">
                   {[
                     { name: "Instagram", url: brand.social.instagram, icon: "📸" },
-                    { name: "Twitter", url: brand.social.twitter, icon: "🐦" },
                     { name: "TikTok", url: brand.social.tiktok, icon: "🎵" },
                     { name: "LinkedIn", url: brand.social.linkedin, icon: "💼" },
                   ].map((social) => (
