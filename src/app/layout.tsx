@@ -10,7 +10,7 @@ import AdsConsent from "@/components/AdsConsent";
 export const metadata: Metadata = {
   title: "Konectr: Your plan. New people. Nearby.",
   description:
-    "Stop scrolling. Start living. Meet new people in Kuala Lumpur over real activities, from coffee to hikes.",
+    "Your plan. New people. Nearby. Post a run, a hike or a coffee and people nearby join you.",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
     { media: "(prefers-color-scheme: dark)", color: "#1F1F1F" },

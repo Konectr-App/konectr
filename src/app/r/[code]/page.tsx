@@ -21,14 +21,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: "You've Been Invited to Konectr!",
-    description: `Join Konectr with referral code ${code}. Meet real people for real activities in Kuala Lumpur. Download the app and start connecting.`,
+    description: `Join Konectr with referral code ${code}. Meet new people over real activities. Download the app and start connecting.`,
     alternates: {
       canonical: `https://konectr.app/r/${code}`,
     },
     openGraph: {
       title: "You've Been Invited to Konectr!",
       description:
-        "Your friend invited you to Konectr — the app for meeting real people through real activities in KL.",
+        "Your friend invited you to Konectr, the app for meeting new people over real activities.",
       url: `https://konectr.app/r/${code}`,
       type: "website",
       images: [SHARE_OG_IMAGE],
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: "You've Been Invited to Konectr!",
       description:
-        "Your friend invited you to Konectr — the app for meeting real people through real activities in KL.",
+        "Your friend invited you to Konectr, the app for meeting new people over real activities.",
       images: [SHARE_OG_IMAGE.url],
     },
   };

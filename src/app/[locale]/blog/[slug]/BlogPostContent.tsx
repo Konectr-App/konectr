@@ -310,7 +310,7 @@ export function BlogPostContent({ post, allPosts }: BlogPostContentProps) {
               Ready to start connecting?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-              Join people in KL making real friendships through shared activities.
+              Join the people ditching the scroll for real plans.
             </p>
             <Button
               size="lg"

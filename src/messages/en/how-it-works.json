@@ -10,7 +10,7 @@
       "title": "Pick Your Activity",
       "description": "Choose what you're in the mood for. Coffee chat? Trail run? Board game night? Browse activities happening near you or create your own.",
       "details": [
-        "Pick from 50+ activities, from #running to #karaoke",
+        "Pick from 58 activities, from running to karaoke",
         "See what's happening right now or later today",
         "Filter by kind of place, distance and places with plans this week"
       ]
@@ -85,7 +85,7 @@
       },
       "cities": {
         "question": "What cities is Konectr available in?",
-        "answer": "Kuala Lumpur, for now. We're building one strong community before we expand to more Malaysian cities. Follow @konectr.app on Instagram for news on new cities."
+        "answer": "Most plans today are in Kuala Lumpur. Konectr also works in Bangkok, Bali, Chiang Mai, Singapore and Da Nang, where it's early: start the first plan and people nearby can join."
       },
       "difference": {
         "question": "How is this different from Meetup or Bumble BFF?",
@@ -95,7 +95,7 @@
   },
   "cta": {
     "title": "Ready to find your people?",
-    "subtitle": "Join the people in KL who are ditching the scroll for real adventures.",
+    "subtitle": "Join the people ditching the scroll for real plans.",
     "button": "Get the app"
   }
 }
