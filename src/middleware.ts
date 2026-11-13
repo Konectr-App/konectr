@@ -25,9 +25,10 @@ export const config = {
     // - /cookies (cookie policy linked from the consent banner - no locale prefix)
     // - /leaderboard (public weekly leaderboard - no locale prefix)
     // - /hyrox (HYROX KL campaign hub - no locale prefix)
+    // - /get (store redirect for the landing page QR code - no locale prefix)
     // - /c (campaign hub landings /c/[key] - no locale prefix)
     // - /h (Konectr Hub public pages /h/[slug] - no locale prefix)
     // - Static files (images, etc.)
-    '/((?!api|_next|_vercel|a/|r/|c/|h/|venue-interview|unsubscribe|thanks|cookies|leaderboard|hyrox|.*\\..*).*)'
+    '/((?!api|_next|_vercel|a/|r/|c/|h/|venue-interview|unsubscribe|thanks|cookies|leaderboard|hyrox|get$|.*\\..*).*)'
   ]
 };

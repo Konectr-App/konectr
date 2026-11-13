@@ -17,6 +17,16 @@
   font-style: normal;
 }
 
+/* Self-hosted Caveat 700 (latin; SIL OFL, public/fonts/Caveat-OFL.txt). Handwritten captions on
+   the Scrapbook landing page only (founder call 2026-11-13, konectr-mvp#669). File: @fontsource/caveat 5.2.5. */
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/caveat-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Self-hosted Inter (variable, latin + latin-ext; SIL OFL, public/fonts/Inter-OFL.txt).
    Was next/font/google, which fetches font files at build time and failed two
    production deploys (2026-11-09, 2026-11-10). Files: @fontsource-variable/inter 5.2.5. */
