@@ -15,7 +15,7 @@ const DEFAULT_OG_IMAGE = {
   url: "/og-image.jpg",
   width: 1200,
   height: 630,
-  alt: "Konectr - Real Adventures with Real People",
+  alt: "Konectr: Your plan. New people. Nearby.",
 };
 
 // Share-link card for /a/[code] and /r/[code]. The URL must be ABSOLUTE: those
@@ -26,7 +26,7 @@ export const SHARE_OG_IMAGE = {
   url: `${BASE_URL}/og-share.jpg`,
   width: 1200,
   height: 630,
-  alt: "Konectr - The Offline First App",
+  alt: "Konectr: Your plan. New people. Nearby.",
 };
 
 type PageMetadataInput = {
@@ -78,7 +78,6 @@ export function buildPageMetadata({
       title,
       description,
       images: ogImages,
-      site: "@konectrapp",
     },
   };
 }

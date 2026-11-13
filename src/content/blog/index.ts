@@ -247,174 +247,19 @@ Ask follow-up questions. Be genuinely curious. The best conversationalists are g
 
 ## Our Favorite Cafe Characteristics
 
-When we pick a café for a Konectr plan, here's what we look for:
+When you pick a spot for a plan, here's what to look for:
 
 - **Comfortable seating**: Couches, armchairs, not just hard chairs
 - **Good lighting**: Natural light is ideal
 - **Reasonable noise level**: Buzzy but not shouting-loud
 - **Great coffee**: Obviously
-- **Friendly staff**: The vibe starts with them
+- **Friendly staff**: The mood starts with them
 
 ## The Konectr Approach
 
 On Konectr, you can see who's interested in meeting at cafes right now. No scheduling, no back-and-forth. Just real people, real coffee, real connection.
 
 Ready to find your coffee crew?
-  `,
-};
-
-// Blog post 5: Strangers to Friends
-export const strangersToFriends: BlogPostFull = {
-  slug: "strangers-to-friends",
-  title: "From Strangers to Friends: Real Konectr Stories",
-  excerpt:
-    "How real people are using Konectr to build genuine friendships and create meaningful connections.",
-  date: "January 5, 2025",
-  readTime: "5 min read",
-  author: "Konectr Team",
-  category: "Stories",
-  image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80",
-  content: `
-## Real Connections, Real Stories
-
-These are the stories that remind us why we built Konectr. Real people, making real friends.
-
-*Note: Names changed for privacy. Stories shared with permission.*
-
----
-
-## Sarah's Running Crew
-
-**The situation**: Sarah moved to a new city for work. She loved running but always ran alone.
-
-**The Konectr moment**: She dropped a slot for a Saturday morning trail run. Three people joined.
-
-**What happened**: That first run turned into a weekly tradition. Six months later, those three strangers are her closest friends in the city. They've done a half-marathon together, celebrated birthdays, and supported each other through tough times.
-
-**Sarah says**: "I thought I was just finding running partners. I found my people."
-
----
-
-## The Board Game Crew
-
-**The situation**: Marcus loved board games but his existing friends weren't into them.
-
-**The Konectr moment**: He found a Konectr game night at a local cafe. Four strangers, one copy of Catan.
-
-**What happened**: They now run monthly game nights at their favourite cafe. They've expanded to eight regulars and have a group chat that's active daily.
-
-**Marcus says**: "I went from playing games alone online to having an in-person crew. It's completely different."
-
----
-
-## Coffee & Career Talk
-
-**The situation**: Priya wanted to switch careers but felt lost. Her current friends didn't understand.
-
-**The Konectr moment**: She joined a "coffee & career chat" meetup at a local cafe.
-
-**What happened**: She met two others going through similar transitions. They started meeting weekly – sometimes to job search together, sometimes just to vent. One of them referred her to her current job.
-
-**Priya says**: "These people understood what I was going through in a way my other friends couldn't. That support was everything."
-
----
-
-## What We've Learned
-
-Across the meetups we've seen so far, a few patterns stand out:
-
-### The 3-Meetup Rule
-If you meet up with the same person three times, there's a 70% chance you'll become ongoing friends.
-
-### Activity Matters
-The best friendships form over shared activities, not just "getting to know you" conversations.
-
-### Small Groups Work
-A handful of people is the sweet spot. Enough energy, but everyone gets to talk.
-
----
-
-## Your Story?
-
-Every Konectr friendship started as two strangers choosing the same activity at the same time.
-
-Your story could be next.
-  `,
-};
-
-// Blog post 6: Vibe Matching Explained
-export const vibeMatchingExplained: BlogPostFull = {
-  slug: "vibe-matching-explained",
-  title: "How Vibe-Based Matching Works",
-  excerpt:
-    "A deep dive into how Konectr matches you with people who share your energy and interests.",
-  date: "January 3, 2025",
-  readTime: "6 min read",
-  author: "Konectr Team",
-  category: "Features",
-  image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80",
-  content: `
-## Beyond Demographics
-
-Most apps match you based on demographics: age, location, maybe some basic interests.
-
-But anyone who's made a great friend knows: **vibe matters more than stats**.
-
-That's why we built vibe-based matching.
-
-## What Is a "Vibe"?
-
-Your vibe is how you approach activities and socializing. It includes:
-
-### Energy Level
-Are you looking for high-energy adventures or chill hangouts? A 6am trail run or a lazy coffee shop afternoon?
-
-### Social Style
-Do you prefer deep 1-on-1 conversations or group energy? Lots of new faces or building with the same crew?
-
-### Activity Preferences
-Not just WHAT you want to do, but HOW you want to do it. Competitive sports or casual games? Challenging hikes or scenic strolls?
-
-## How We Match
-
-### Step 1: Activity Selection
-You pick what you want to do. This immediately filters to people interested in the same activity.
-
-### Step 2: Vibe Signals
-We look at signals like:
-- Time of day preferences
-- Activity intensity choices
-- Past meetup patterns
-- Response styles
-
-### Step 3: Compatibility Score
-We calculate how likely you are to have a great time together, based on vibe alignment.
-
-### Step 4: Group Composition
-When building small groups, we aim for complementary vibes – similar enough to connect, diverse enough to be interesting.
-
-## What We Don't Use
-
-We're intentional about what we leave out:
-
-- **Photos in matching**: You see photos later, but they don't affect who you're matched with
-- **Wealth indicators**: No showing off job titles or fancy possessions
-- **Popularity metrics**: No follower counts or "hot or not" dynamics
-
-## The Results
-
-Our vibe-based approach leads to:
-
-- **Higher meetup attendance**: People actually show up
-- **Better conversations**: You have natural things to talk about
-- **More repeat meetups**: People want to hang out again
-- **Real friendships**: Not just acquaintances
-
-## Try It Yourself
-
-The best way to understand vibe matching is to experience it.
-
-Pick an activity. See who shows up. Feel the difference.
   `,
 };
 
@@ -441,9 +286,6 @@ Here's how we work to earn and maintain that trust.
 ### Verified Sign-In
 Every account is verified with a one-time code sent to your email before it can join anything. No throwaway or duplicate accounts.
 
-### Photo Verification (coming soon)
-Optional selfie matching, so members can see at a glance that a profile photo is really you.
-
 ### Profile Completeness
 We encourage complete profiles so you know who you're meeting before you meet.
 
@@ -452,8 +294,8 @@ We encourage complete profiles so you know who you're meeting before you meet.
 ### Public Venues Only
 All Konectr meetups happen at public venues – cafes, parks, gyms, restaurants. Never private locations.
 
-### Check-In System
-Let a friend know where you are with our optional check-in feature.
+### Tell a Friend
+Tell a friend where you'll be before you go. In a plan's chat you can also share your location with the group for 15 minutes, if you choose to.
 
 ## Community Standards
 
@@ -513,8 +355,6 @@ export const allPosts: BlogPostFull[] = [
   lonelinessEpidemic,
   makeFriendsAsAdult,
   perfectFirstMeetup,
-  strangersToFriends,
-  vibeMatchingExplained,
   safetyFirst,
 ];
 

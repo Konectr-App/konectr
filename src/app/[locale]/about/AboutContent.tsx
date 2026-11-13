@@ -26,7 +26,7 @@ const values = [
     icon: "🛡️",
     title: "Safety First",
     description:
-      "Every account is verified. Every meetup is in public. Your safety is our priority.",
+      "Every member signs in with a one-time code. Every meetup is in public. Your safety is our priority.",
   },
   {
     icon: "🌍",
@@ -183,7 +183,7 @@ export function AboutContent() {
               className="text-3xl md:text-4xl font-black text-foreground mb-4"
               style={{ fontFamily: "'Satoshi', sans-serif" }}
             >
-              Join the Movement
+              Your plan. New people. Nearby.
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
               Be part of the community that&apos;s bringing real connection back.

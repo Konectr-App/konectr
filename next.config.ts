@@ -67,6 +67,14 @@ const nextConfig: NextConfig = {
         destination: "/en/:path*",
         permanent: true,
       },
+      // 2026-11-10: two retired blog posts were deleted from
+      // src/content/blog/index.ts. Send their indexed URLs to the blog index
+      // instead of a 404.
+      {
+        source: "/en/blog/:slug(strangers-to-friends|vibe-matching-explained)",
+        destination: "/en/blog",
+        permanent: true,
+      },
     ];
   },
   images: {

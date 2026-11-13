@@ -20,7 +20,6 @@
         "placeholder": "Select a topic",
         "options": {
           "general": "General Inquiry",
-          "partnership": "Partnership",
           "venue": "Venues",
           "press": "Press & Media",
           "support": "Support",
@@ -45,7 +44,7 @@
     },
     "social": {
       "title": "Social Media",
-      "value": "@konectrapp"
+      "value": "@konectr.app on Instagram, Threads and TikTok"
     },
     "community": {
       "title": "Community",
@@ -56,7 +55,6 @@
     "title": "Follow us",
     "platforms": {
       "instagram": "Instagram",
-      "twitter": "Twitter",
       "tiktok": "TikTok",
       "linkedin": "LinkedIn"
     }

@@ -32,7 +32,6 @@ export function buildShareMetadata(activity: SharedActivity | null, code: string
         title: 'Konectr',
         description: 'This activity could not be found.',
         images: [SHARE_OG_IMAGE.url],
-        site: '@konectrapp',
       },
     };
   }
@@ -60,7 +59,6 @@ export function buildShareMetadata(activity: SharedActivity | null, code: string
         title: WOMEN_ONLY_SHARE_TITLE,
         description: WOMEN_ONLY_SHARE_DESCRIPTION,
         images: [SHARE_OG_IMAGE.url],
-        site: '@konectrapp',
       },
     };
   }
@@ -98,7 +96,6 @@ export function buildShareMetadata(activity: SharedActivity | null, code: string
       title: `${activity.title} - Konectr`,
       description: richDescription,
       images: [SHARE_OG_IMAGE.url],
-      site: '@konectrapp',
     },
   };
 }

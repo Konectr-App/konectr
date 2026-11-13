@@ -54,7 +54,7 @@ export default function RsvpLayout({ vibe, photo, venueName, posterKicker, women
             </b>
           </span>
           <span className="text-[11px] italic text-white/90 font-medium lg:text-[13px]">
-            Let&apos;s make it real
+            Your plan. New people. Nearby.
           </span>
         </div>
 

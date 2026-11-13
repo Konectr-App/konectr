@@ -38,7 +38,6 @@ export function Footer() {
               {[
                 { icon: "facebook", url: brand.social.facebook },
                 { icon: "instagram", url: brand.social.instagram },
-                { icon: "twitter", url: brand.social.twitter },
                 { icon: "linkedin", url: brand.social.linkedin },
                 { icon: "tiktok", url: brand.social.tiktok },
               ].map((social) => (

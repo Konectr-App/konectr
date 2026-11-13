@@ -10,6 +10,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import StoreCTAs from '@/components/StoreCTAs';
 import { mayFireConversion } from './mayFireConversion';
 
 declare global {
@@ -91,12 +92,14 @@ export default function ThanksContent({ rid }: { rid?: string }) {
       <div className="max-w-md w-full bg-card border border-border rounded-3xl p-10 text-center">
         <div className="text-5xl mb-4">🎉</div>
         <h1 className="text-2xl font-bold text-foreground mb-3">
-          You&apos;re on the list!
+          Thanks! Konectr is live.
         </h1>
         <p className="text-muted-foreground mb-8">
-          We&apos;ll email you as soon as it&apos;s your turn. Keep an eye on
-          your inbox — real plans move fast.
+          Konectr is free on the App Store and Google Play. Get the app and find a plan this week.
         </p>
+        <div className="mb-6">
+          <StoreCTAs platform={null} source="thanks" />
+        </div>
         <Link
           href="/"
           className="inline-block px-6 py-3 rounded-xl bg-primary text-[#1F1F1F] font-semibold hover:opacity-90"

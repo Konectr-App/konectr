@@ -9,7 +9,7 @@
     "getApp": "Get the app"
   },
   "footer": {
-    "tagline": "Real adventures with real people, right now. Join the movement.",
+    "tagline": "Your plan. New people. Nearby.",
     "company": "Company",
     "resources": "Resources",
     "legal": "Legal",
@@ -17,7 +17,7 @@
     "links": {
       "ourStory": "Our Story",
       "howItWorks": "How It Works",
-      "findYourVibe": "Find Your Vibe",
+      "findYourVibe": "Activities",
       "contact": "Contact",
       "forVenues": "For venues",
       "communityGuidelines": "Community Guidelines",
@@ -52,7 +52,7 @@
     "currentLanguage": "Current language"
   },
   "metadata": {
-    "title": "Konectr - Real Adventures with Real People",
+    "title": "Konectr: Your plan. New people. Nearby.",
     "description": "Stop scrolling. Start living. Connect with people who share your interests and meet up for real adventures."
   }
 }

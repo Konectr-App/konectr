@@ -6,7 +6,7 @@
 
 export const brand = {
   name: "Konectr",
-  tagline: "Real adventures with real people, right now.",
+  tagline: "Your plan. New people. Nearby.",
   launchDate: "June 2026",
 
   colors: {
@@ -29,7 +29,6 @@ export const brand = {
   social: {
     facebook: "https://www.facebook.com/Konectr/about",
     instagram: "https://www.instagram.com/konectr.app/",
-    twitter: "https://www.x.com/konectrapp",
     linkedin: "https://www.linkedin.com/company/konectr/",
     tiktok: "https://www.tiktok.com/@konectr.app",
   },

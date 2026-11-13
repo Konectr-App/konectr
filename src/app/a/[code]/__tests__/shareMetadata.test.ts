@@ -52,7 +52,6 @@ function legacyMetadata(activity: SharedActivity, code: string): Metadata {
       title: `${activity.title} - Konectr`,
       description: richDescription,
       images: [SHARE_OG_IMAGE.url],
-      site: '@konectrapp',
     },
   };
 }

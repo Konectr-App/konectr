@@ -57,7 +57,7 @@ export default async function UnsubscribePage({
               You&apos;ll still get critical account emails (security, account changes).
             </p>
             <p className="text-sm text-foreground/80 mt-6">
-              Changed your mind? Re-enable email in the Konectr app under <strong>Profile → Notification Settings</strong>.
+              Changed your mind? Re-enable email in the Konectr app under <strong>You → Settings → Notifications</strong> (Profile → Settings on versions before 2.1).
             </p>
           </>
         ) : (
@@ -68,7 +68,7 @@ export default async function UnsubscribePage({
               This unsubscribe link isn&apos;t valid. It may have been used already or copied incorrectly.
             </p>
             <p className="text-sm text-foreground/80 mt-6">
-              You can manage email preferences in the Konectr app under <strong>Profile → Notification Settings</strong>, or email{' '}
+              You can manage email preferences in the Konectr app under <strong>You → Settings → Notifications</strong> (Profile → Settings on versions before 2.1), or email{' '}
               <a href="mailto:hello@konectr.app" className="text-primary hover:underline">hello@konectr.app</a> for help.
             </p>
           </>

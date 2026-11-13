@@ -14,10 +14,9 @@ const safetyFeaturesMeta = [
   { key: "quickReporting", icon: "🚨" },
   { key: "threeStrikeSystem", icon: "⚖️" },
   { key: "privateMessaging", icon: "🔒" },
-  { key: "photoVerification", icon: "📸", comingSoon: true },
-  // PF-46. Full row so the grid stays even. Drop comingSoon once the app's
-  // "Women" option ships on both stores.
-  { key: "womenOnly", icon: "👭", comingSoon: true, wide: true },
+  { key: "appLock", icon: "🔐" },
+  // PF-46. Full row so the grid stays even.
+  { key: "womenOnly", icon: "👭", wide: true },
 ] as const;
 
 const guidelinesMeta = ["beRespectful", "beHonest", "beSafe"] as const;
@@ -66,11 +65,6 @@ export function SafetyContent() {
                   style={{ fontFamily: "'Satoshi', sans-serif" }}
                 >
                   {t(`features.items.${feature.key}.title`)}
-                  {"comingSoon" in feature && feature.comingSoon && (
-                    <span className="ml-2 inline-block bg-secondary text-foreground text-[10px] font-semibold px-2 py-0.5 rounded uppercase">
-                      {t("features.comingSoonLabel")}
-                    </span>
-                  )}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {t(`features.items.${feature.key}.description`)}

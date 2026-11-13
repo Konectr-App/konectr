@@ -108,7 +108,7 @@ function Confirming({ isLate, venueShort, onConfirm, onDismiss }: WithdrawSheetP
       </h2>
       <p className="text-[14.5px] leading-[1.5] text-[#616161] mt-2">
         No worries — your seat at <b className="text-[#1F1F1F]">{venueShort}</b> frees up for someone else
-        right away. The plan carries on without you; there&apos;s no host to cancel on.
+        right away. The plan carries on without you.
       </p>
 
       {isLate && (
