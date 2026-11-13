@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s | Konectr",
     },
     description:
-      "Meet new people in Kuala Lumpur through real activities. Konectr helps you find friends for coffee, hiking, fitness & more. Join free.",
+      "Your plan. New people. Nearby. Post a run, a hike or a coffee and people nearby join you.",
     metadataBase: new URL(baseUrl),
     robots: {
       index: true,

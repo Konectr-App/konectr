@@ -38,11 +38,11 @@ export default async function HowItWorksPage({ params }: Props) {
     [
       {
         name: "Pick Your Activity",
-        text: "Pick from 50+ activities, from coffee and running to karaoke and pottery. Set a time window and the group size.",
+        text: "Pick from 58 activities, from coffee and running to karaoke and pottery. Set a time window and the group size.",
       },
       {
-        name: "Find Your Activity Match",
-        text: "Browse people nearby who want to do the same thing right now. Konectr matches you based on activity, timing and location.",
+        name: "People Join",
+        text: "Post the activity, the place and a time window. People nearby who are up for the same plan join you.",
       },
       {
         name: "Meet at the Spot",

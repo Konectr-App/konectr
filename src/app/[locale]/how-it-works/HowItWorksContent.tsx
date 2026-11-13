@@ -17,7 +17,7 @@ const steps = [
     description:
       "Choose what you're in the mood for. Coffee chat? Trail run? Board game night? Browse activities happening near you or create your own.",
     details: [
-      "Pick from 50+ activities, from #running to #karaoke",
+      "Pick from 58 activities, from running to karaoke",
       "See what's happening right now or later today",
       "Filter by kind of place, distance and places with plans this week",
     ],
@@ -78,7 +78,7 @@ const faqs = [
   {
     question: "What cities is Konectr available in?",
     answer:
-      "Kuala Lumpur, for now. We're building one strong community before we expand to more Malaysian cities. Follow @konectr.app on Instagram for news on new cities.",
+      "Most plans today are in Kuala Lumpur. Konectr also works in Bangkok, Bali, Chiang Mai, Singapore and Da Nang, where it's early: start the first plan and people nearby can join.",
   },
   {
     question: "How is this different from Meetup or Bumble BFF?",
@@ -284,8 +284,7 @@ export function HowItWorksContent() {
               Ready to find your people?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-              Join the people in KL who are ditching the scroll for real
-              adventures.
+              Join the people ditching the scroll for real plans.
             </p>
             <Button
               size="lg"

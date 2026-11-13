@@ -201,8 +201,8 @@ export default function HyroxContent({
             Find your HYROX training partner
           </h2>
           <p className="mt-2 text-[14px] leading-[1.55] text-white/75">
-            Konectr matches you with people near you who are training for the same
-            race. Real people, real sessions, real accounts.
+            Post a training session and people near you who are training for the
+            same race join you. Real people, real sessions, real accounts.
           </p>
 
           <div className="mt-5 max-w-[340px] mx-auto">

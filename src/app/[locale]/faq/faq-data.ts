@@ -28,7 +28,7 @@ export const faqCategories: FAQCategory[] = [
     faqs: [
       {
         question: "What is Konectr?",
-        answer: "Konectr is a free social app that helps adults make real friends through shared activities in Kuala Lumpur. Instead of endless swiping, you pick an activity, get matched with nearby people who want to do the same thing, and meet at a public venue. It's activity-first, not profile-first."
+        answer: "Konectr is a free social app that helps adults make real friends through shared activities in Kuala Lumpur. Instead of endless swiping, you post an activity, nearby people who want to do the same thing join, and you meet at a public venue. It's activity-first, not profile-first."
       },
       {
         question: "How much does Konectr cost?",
@@ -44,11 +44,11 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "How do I meet people in KL if I'm an expat?",
-        answer: "Konectr was built for exactly this. Pick any activity — coffee at a cafe, a fitness class, outdoor hiking — and Konectr matches you with locals and other expats who want to do the same thing. Small groups at public venues make it easy and safe to meet new people."
+        answer: "Konectr was built for exactly this. Pick any activity — coffee at a cafe, a fitness class, outdoor hiking — and locals and other expats who want to do the same thing join you. Small groups at public venues make it easy and safe to meet new people."
       },
       {
         question: "What kind of activities can I do on Konectr?",
-        answer: "Pick from 50+ activities, from #running and #badminton to #karaoke, #pottery and #escaperoom. Want something else? Use #social and give your plan its own title."
+        answer: "Pick from 58 activities, from running and badminton to karaoke, pottery and escape rooms. Want something else? Use #social and give your plan its own title."
       },
       {
         question: "Can I use Konectr for dating?",
@@ -70,7 +70,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What makes Konectr different from other social apps?",
-        answer: "No chat that goes nowhere. On Konectr, every connection leads to a real meetup. You pick an activity, get matched with people planning the same thing, and meet IRL at a public venue. No endless swiping, no ghosting — just real people doing real things."
+        answer: "No chat that goes nowhere. On Konectr, every connection leads to a real meetup. You post an activity, people up for the same plan join, and you meet IRL at a public venue. No endless swiping, no ghosting — just real people doing real things."
       },
       {
         question: "I'm new in KL. Can Konectr help me make friends?",
