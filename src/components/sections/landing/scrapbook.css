@@ -268,8 +268,9 @@
   .lp-pile { height: 620px; max-height: none; margin: 0; }
   .lp-pol { width: 52%; padding: 10px 10px 44px; }
   .lp-pol figcaption { font-size: 28px; bottom: 8px; }
-  .lp-pol:nth-child(1) { top: 0; }
-  .lp-pol:nth-child(2) { left: 44%; top: 14%; }
+  /* First photo sits on top here, so the second never covers its caption. */
+  .lp-pol:nth-child(1) { top: 0; z-index: 3; }
+  .lp-pol:nth-child(2) { left: 48%; top: 14%; }
   .lp-pol:nth-child(3) { right: auto; left: 10%; top: 53%; }
   .lp-stk { font-size: 17px; }
   .lp-stk-plan { left: -4%; bottom: 30%; }
