@@ -218,7 +218,8 @@ export function ScrapbookLanding() {
         </div>
       </section>
 
-      <section className="lp-band">
+      {/* id kept from the old page: the footer "Activities" link points at /#vibes. */}
+      <section id="vibes" className="lp-band">
         <div className="lp-wrap">
           <h2>{t("pick.title")}</h2>
           <div className="lp-acts">
@@ -249,7 +250,8 @@ export function ScrapbookLanding() {
         </div>
       </section>
 
-      <section className="lp-end">
+      {/* id kept from the old page: "Get the app" on inner pages falls back to /#waitlist. */}
+      <section id="waitlist" className="lp-end">
         <div className="lp-wrap lp-end-row">
           <div>
             <h2>{t("end.title")}</h2>
