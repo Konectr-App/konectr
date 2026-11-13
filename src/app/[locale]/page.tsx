@@ -15,9 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildPageMetadata({
     locale,
     path: "",
-    title: "Konectr — Meet New People in Kuala Lumpur | Real Activities",
+    // City-neutral since the landing page takes its city from the link (konectr-mvp#669).
+    // KL stays in the description: it is where most plans run and what people search for.
+    title: "Konectr — Meet New People Nearby | Real Activities",
     description:
-      "Meet new people in Kuala Lumpur through real activities. Konectr matches you for coffee, hikes, fitness and more, right now. Free on the App Store and Google Play.",
+      "Post a run, a hike or a coffee and people nearby join you. Free on the App Store and Google Play. Most plans today are in Kuala Lumpur.",
   });
 }
 
