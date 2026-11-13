@@ -94,5 +94,119 @@
     "title": "Ready to ditch the scroll?",
     "subtitle": "Konectr is free on the App Store and Google Play. Pick a plan, meet the people on it.",
     "learnMore": "Learn More"
+  },
+  "landing": {
+    "headline": {
+      "a": "Your plan.",
+      "b": "New people.",
+      "c": "Nearby."
+    },
+    "sub": "Post a run, a hike or a coffee. People nearby who are up for the same plan join you.",
+    "subKl": "Post a run, a hike or a coffee in KL. People nearby who are up for the same plan join you.",
+    "cityNew": "New in {city}. Start the first plan.",
+    "free": "Free to start, join and chat. Always.",
+    "appStore": "Download on the App Store",
+    "googlePlay": "Get it on Google Play",
+    "alsoAndroid": "On Android? Get it on Google Play",
+    "alsoIphone": "On iPhone? Download on the App Store",
+    "qr": "Scan with your phone",
+    "polaroids": {
+      "one": {
+        "caption": "Sunday hike crew",
+        "alt": "Four friends squeezed into a laughing selfie"
+      },
+      "two": {
+        "caption": "we actually went!",
+        "alt": "Five friends jumping in the air against a red wall"
+      },
+      "three": {
+        "caption": "brunch, 11 am",
+        "alt": "Hands clinking glasses over a brunch table"
+      }
+    },
+    "stickers": {
+      "plan": "Pickleball, Thu 8 pm",
+      "crew": "3 of 4 in"
+    },
+    "how": {
+      "title": "How it works",
+      "one": {
+        "title": "Post your plan",
+        "text": "The activity, the place, a time window.",
+        "alt": "A friend in sunglasses cracking up",
+        "chipActivity": "Pickleball",
+        "chipPlace": "A court near you",
+        "chipTime": "Thu 8 to 10 pm"
+      },
+      "two": {
+        "title": "People join",
+        "text": "Small groups of 2 to 5, all in for the same plan.",
+        "alt": "Five friends with arms up in a park",
+        "joined": "+1 just joined"
+      },
+      "three": {
+        "title": "Meet there",
+        "text": "Sort the details in the plan chat, then show up.",
+        "alt": "Friends laughing on a walk through greenery",
+        "bubbleMe": "Court 3, I'll bring spare paddles",
+        "bubbleThem": "See you at 8!"
+      }
+    },
+    "pick": {
+      "title": "Pick your plan",
+      "more": "58 activities in the app, from badminton to board games.",
+      "items": {
+        "brunch": {
+          "label": "Brunch",
+          "alt": "A sunny brunch table crowded with plates, coffee and friends"
+        },
+        "kayaking": {
+          "label": "Kayaking",
+          "alt": "Bright kayaks rafted together on open water"
+        },
+        "photowalk": {
+          "label": "Photo walk",
+          "alt": "Four friends with film cameras posing on a city street"
+        },
+        "badminton": {
+          "label": "Badminton",
+          "alt": "A badminton player ready at the net"
+        },
+        "boardgames": {
+          "label": "Board games",
+          "alt": "Friends mid-hand in a card game"
+        },
+        "dragonboat": {
+          "label": "Dragon boat",
+          "alt": "A dragon boat crew paddling in sync"
+        }
+      }
+    },
+    "facts": {
+      "free": {
+        "mark": "Free",
+        "rest": ", always",
+        "text": "Start a plan, join one and chat without paying."
+      },
+      "group": {
+        "mark": "2 to 5",
+        "rest": " people",
+        "text": "Small enough that everyone gets a word in."
+      },
+      "women": {
+        "mark": "Women-only",
+        "rest": " plans",
+        "text": "Only women see and join them."
+      }
+    },
+    "end": {
+      "title": "Got a plan this weekend?",
+      "text": "Post it on Konectr and let your city join in."
+    },
+    "bar": {
+      "name": "Konectr",
+      "text": "Free on iPhone and Android",
+      "cta": "Get the app"
+    }
   }
 }

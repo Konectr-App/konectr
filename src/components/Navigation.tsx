@@ -58,9 +58,11 @@ export function Navigation() {
       }}
     >
       <div className="flex items-center gap-6">
-        {/* Logo - Only show when not on homepage */}
-        {!isHomepage && (
-          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+        {/* Full logo on inner pages; the mark alone on the homepage, where the hero carries the brand line. */}
+        <Link href="/" className="flex shrink-0 items-center hover:opacity-80 transition-opacity" aria-label="Konectr">
+          {isHomepage ? (
+            <Image src="/logos/konectr-icon-orange.svg" alt="" width={32} height={32} className="h-8 w-8" priority />
+          ) : (
             <Image
               src={brand.assets.logoOrange}
               alt="Konectr"
@@ -69,8 +71,8 @@ export function Navigation() {
               className="h-8 w-auto"
               priority
             />
-          </Link>
-        )}
+          )}
+        </Link>
 
         {/* Nav Links - Hidden on mobile */}
         <div className="hidden md:flex items-center gap-6">
@@ -93,7 +95,11 @@ export function Navigation() {
             {cta.href === "#waitlist" ? (
               <Link href="/#waitlist">{t("joinWaitlist")}</Link>
             ) : (
-              <a href={cta.href} onClick={cta.onClick}>{cta.label}</a>
+              <a href={cta.href} onClick={cta.onClick}>
+                {/* Short label on phones so the pill fits beside the mark. */}
+                <span className="sm:hidden">{t("getApp")}</span>
+                <span className="hidden sm:inline">{cta.label}</span>
+              </a>
             )}
           </Button>
         </div>
