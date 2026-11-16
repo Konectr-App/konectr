@@ -81,6 +81,10 @@ const sections = [
           // reading we do not support. See the retention table below.
           "Messages sent (retained while the conversation exists)",
           "Alerts you turn on (optional): the hashtag or area you ask us to watch, the full plans you want to hear about if a spot opens, and the days we sent you an alert",
+          // 2.1.3 phase 4 (#608). Tables: plan_nods, plan_arrivals, group_invites, official_inbox_state.
+          "On the day of a plan (optional): a nod you send to someone on it, and whether you tapped I'm here or Running late",
+          "Group invites you send, and your answers to the ones you get",
+          "Messages you send to Konectr with Message Konectr",
         ],
       },
       {
@@ -135,6 +139,27 @@ const sections = [
         subtitle: "Alerts you ask for",
         content:
           "If you ask Konectr to tell you when someone's up for something, or when a spot opens on a full plan, we store that request. Nobody else sees your alerts, and the person whose plan you're watching isn't told. You get at most one alert a day, and never for a women-only plan you can't join, a Circle-only plan you're not part of, or someone you've blocked or who has blocked you. To stop, turn the alert off where you set it, which deletes it, or turn off Reminders in Settings → Notifications to stop the pushes. Your alerts are deleted with your account.",
+      },
+      // 2.1.3 phase 4 (#608): the day of a plan, groups, Circle pushes, Message Konectr and announcements.
+      {
+        subtitle: "On the day of a plan",
+        content:
+          "A nod goes only to the person you nod at. Nobody else on the plan sees it. If you tap I'm here or Running late, the people on that plan see it. A Circle request you send to someone you were on a plan with shows them that plan (\"Met at …\").",
+      },
+      {
+        subtitle: "Groups you're invited to",
+        content:
+          "When someone invites you to a group, you see who asked and, if the invite came from a plan, which plan. Nobody is added to a group without accepting. If you tap Not now, the person who invited you isn't told. The invite just lapses.",
+      },
+      {
+        subtitle: "When your Circle posts",
+        content:
+          "When you post a plan your Circle can see, people in your Circle who turned on your bell may get a push with your name, the plan, the place and the time. Each of them gets at most one such push a day, and never for a plan they can't see or join.",
+      },
+      {
+        subtitle: "Messages to Konectr and announcements",
+        content:
+          "Messages you send with Message Konectr are read by the Konectr team so we can answer you. They are kept like any other chat. Konectr may also send announcements, at most three a month. They come as a push, in Updates and on the Konectr profile. The General announcements switch turns the push off.",
       },
       {
         subtitle: "This Week wall (photos you choose to publish)",
@@ -239,7 +264,7 @@ const sections = [
       {
         category: "Organizational Safeguards",
         items: [
-          "Access to production data is limited to the founder",
+          "Access to production data is limited to the Konectr team",
           "Security review of every change that touches personal data",
           "Data breaches are reported to affected users and the Commissioner as PDPA requires",
         ],
@@ -281,6 +306,12 @@ const sections = [
         data: "Alerts you turn on",
         period:
           "Kept until you turn the alert off, which deletes it. The record of days we sent you an alert is kept while your account is open. Both are erased with your account",
+      },
+      // 2.1.3 phase 4 (#608): process_account_deletions hard-deletes these rows (migration 20261116030700).
+      {
+        data: "Nods, I'm here marks and group invites",
+        period:
+          "Kept while your account is open. Erased with your account, sent or received, and any push about them that hasn't gone out is cancelled. Your data export lists them",
       },
       {
         data: "Crash logs",
@@ -358,7 +389,7 @@ export function PrivacyContent() {
       <section className="pt-12 pb-4">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-muted-foreground text-sm">
-            Last Updated: October 25, 2026 &middot; Effective Date: December 10,
+            Last Updated: November 16, 2026 &middot; Effective Date: December 10,
             2025
           </p>
         </div>
