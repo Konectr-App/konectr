@@ -903,7 +903,7 @@ Desktop visitors always route to the waitlist page — there's no app to downloa
 |----------|-------|-------|
 | `NOTION_API_KEY` | Production + Preview | Internal Notion integration token |
 | `NOTION_INTERVIEW_DATABASE_ID` | Production + Preview | UUID without hyphens |
-| `INTERVIEW_FORM_KEY` | Production (not set yet) | Optional shared key for the form (Konectr-App/konectr-mvp#257). Unset = no check, as before. Once set, `POST /api/venue-interview` answers 401 without the matching `x-interview-form-key` header, and the form asks for the key on its last step and remembers it on that device. |
+| `INTERVIEW_FORM_KEY` | **Production and Preview** (not set yet) | Optional shared key for the form (Konectr-App/konectr-mvp#257). Set it on both: the Notion variables are on Preview too, so a preview URL without the key would stay an open way in. Use `printf`, not `echo` (a trailing newline is trimmed, but don't rely on it). Unset = no check, as before. Once set, `POST /api/venue-interview` answers 401 without the matching `x-interview-form-key` header, and the form asks for the key on its last step and remembers it on that device. |
 
 **Important**: Use `printf` (not `echo`) when piping values to `vercel env add` — `echo` appends `\n` which corrupts HTTP headers and UUID validation.
 

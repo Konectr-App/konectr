@@ -71,15 +71,16 @@ export default function VenueInterviewForm({ keyRequired = false }: { keyRequire
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          ...(formKey ? { [FORM_KEY_HEADER]: formKey } : {}),
+          // Percent-encoded: a header can only carry Latin-1, and the key may be anything.
+          ...(formKey.trim() ? { [FORM_KEY_HEADER]: encodeURIComponent(formKey.trim()) } : {}),
         },
         body: JSON.stringify(data),
       });
       // 401 = the key is missing or wrong. The draft stays; only the key field reopens.
       setKeyRefused(res.status === 401);
-      if (res.ok && formKey) {
+      if (res.ok && formKey.trim()) {
         try {
-          localStorage.setItem(FORM_KEY_STORAGE, formKey);
+          localStorage.setItem(FORM_KEY_STORAGE, formKey.trim());
           setKeySaved(true);
         } catch {
           // ignore

@@ -181,26 +181,48 @@ describe('activityImage — event photos beat the hashtag', () => {
 describe('activityImage — links in the text are not keywords (#322)', () => {
   // Founder screenshot 2026-10-14: "5k" inside this reel id gave a horror night the runner photo.
   const REEL = 'https://www.instagram.com/reel/Dd5kZ6svWfx';
+  const plain = activityImage({ vibe: 'social', title: 'Hang out' });
 
+  // Each of these holds a keyword as a whole word inside the link, so only removing the link
+  // (not the word-boundary rule) keeps it from matching.
   it.each([
-    ['an Instagram reel id containing 5k', `Details: ${REEL}`],
-    ['a link containing 10k', 'Tickets at www.example.com/e/a10kb'],
-    ['a link containing a keyword', 'Map: https://maps.example.com/padel-club-yoga-run'],
+    ['the reel that started this', `Details: ${REEL}`],
+    ['an https link with whole-word keywords', 'Map: https://maps.example.com/padel/yoga/run/5k'],
+    ['an http link', 'http://example.com/e/10k'],
+    ['a www link with no scheme', 'Tickets at www.example.com/padel-night'],
+    ['an upper-case link', 'HTTPS://EXAMPLE.COM/PADEL/5K'],
+    ['two links', 'https://a.example/run and www.b.example/coffee'],
   ])('ignores %s', (_label, purpose) => {
-    expect(activityImage({ vibe: 'social', title: 'Hang out', purpose }))
-      .toBe(activityImage({ vibe: 'social', title: 'Hang out' }));
+    expect(activityImage({ vibe: 'social', title: 'Hang out', purpose })).toBe(plain);
   });
 
   it('still reads the words around a link', () => {
     expect(activityImage({ vibe: 'chill', title: 'Hang out', purpose: `Coffee first. ${REEL}` }))
       .toBe('/images/activities/cafe.jpg');
+    expect(activityImage({ vibe: 'social', title: 'Hang out', purpose: `${REEL} then padel` }))
+      .toBe('/images/activities/padel.jpg');
   });
 
-  it.each(['Sunday 5k', 'KLCC 10K loop', 'Easy 5km by the lake', 'Morning run'])('keeps "%s" on the runner photo', (title) => {
-    expect(activityImage({ vibe: 'active', title })).toBe('/images/activities/run.jpg');
+  it('only treats www. as a link at the start of a word', () => {
+    expect(activityImage({ vibe: 'active', title: 'Awww...run with us' })).toBe('/images/activities/run.jpg');
   });
 
-  it.each(['Meet at 15k Coffee Lab', 'Budget RM5k trip planning'])('does not read "%s" as a run', (title) => {
-    expect(activityImage({ vibe: 'social', title })).not.toBe('/images/activities/run.jpg');
+  it('drops a word glued to a link, on purpose (see URL_IN_TEXT)', () => {
+    expect(activityImage({ vibe: 'social', title: 'Hang out', purpose: 'https://x.example/abc,padel tonight' }))
+      .toBe(plain);
   });
+
+  it.each(['Sunday 5k', 'KLCC 10K loop', 'Easy 5km by the lake', 'Sunday 15K', 'Half marathon 21km', 'Morning run'])(
+    'keeps "%s" on the runner photo',
+    (title) => {
+      expect(activityImage({ vibe: 'active', title })).toBe('/images/activities/run.jpg');
+    },
+  );
+
+  it.each(['Meet at 150k Lab', 'Budget RM5k trip planning', 'Flat 25k deposit talk'])(
+    'does not read "%s" as a run',
+    (title) => {
+      expect(activityImage({ vibe: 'social', title })).not.toBe('/images/activities/run.jpg');
+    },
+  );
 });

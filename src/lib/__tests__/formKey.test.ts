@@ -1,6 +1,6 @@
 // © Konectr 2026. All rights reserved.
 import { describe, it, expect } from 'vitest';
-import { formKeyOk } from '../formKey';
+import { formKeyOk, readFormKey } from '../formKey';
 
 describe('formKeyOk (Konectr-App/konectr-mvp#257)', () => {
   it('is off when no key is configured, so a deploy without the env var is unchanged', () => {
@@ -29,5 +29,34 @@ describe('formKeyOk (Konectr-App/konectr-mvp#257)', () => {
   it('handles non-ASCII keys by bytes', () => {
     expect(formKeyOk('kópi-ais', 'kópi-ais')).toBe(true);
     expect(formKeyOk('kópi-ais', 'kopi-ais')).toBe(false);
+  });
+
+  it('ignores whitespace around either side, so an env var saved with a newline still works', () => {
+    expect(formKeyOk('s3cret-key\n', 's3cret-key')).toBe(true);
+    expect(formKeyOk('  s3cret-key ', 's3cret-key')).toBe(true);
+    expect(formKeyOk('s3cret-key', ' s3cret-key ')).toBe(true);
+    expect(formKeyOk(' \n', null)).toBe(true); // whitespace only = not configured
+    expect(formKeyOk('s3cret-key', '   ')).toBe(false);
+  });
+});
+
+describe('readFormKey', () => {
+  it('returns null for a missing header', () => {
+    expect(readFormKey(null)).toBeNull();
+    expect(readFormKey(undefined)).toBeNull();
+    expect(readFormKey('')).toBeNull();
+  });
+
+  it('decodes what the form percent-encoded, including characters a header cannot carry', () => {
+    for (const key of ['s3cret-key', 'kópi – ais', 'kunci ☕ rahsia', "it's 100% mine"]) {
+      const header = encodeURIComponent(key);
+      expect(/^[\x00-\xff]*$/.test(header)).toBe(true); // safe to send
+      expect(readFormKey(header)).toBe(key);
+      expect(formKeyOk(key, readFormKey(header))).toBe(true);
+    }
+  });
+
+  it('takes a value that is not valid percent-encoding as typed', () => {
+    expect(readFormKey('100%')).toBe('100%');
   });
 });

@@ -112,7 +112,7 @@ const KEYWORD_RULES: Array<[RegExp, string]> = [
   // tower beats the generic restaurant shot for anything hosted at the mall.
   [/\btrx\b|tun razak exchange/, 'trx'],
   [/restaurant|dinner|lunch|makan|dining|foodie|feast/, 'restaurant'],
-  [/\brun\b|running|\bjog\b|marathon|\b(?:5|10)km?\b|park run/, 'run'],
+  [/\brun\b|running|\bjog\b|marathon|\b(?:5|10|15|21|42)km?\b|park run/, 'run'],
   [/yoga|pilates|stretch|breathwork/, 'yoga'],
   [/basketball|hoops/, 'basketball'],
   [/football|futsal|soccer|frisbee/, 'football'],
@@ -151,7 +151,13 @@ export const WOMEN_ONLY_PATTERN = '/images/activities/women-only.jpg';
 
 // Links are not what a plan is about: "5k" inside an Instagram reel id once gave a
 // horror night the runner photo (Konectr-App/konectr-mvp#322).
-const URL_IN_TEXT = /(?:https?:\/\/|www\.)\S+/g;
+// - `www.` only counts at the start of a word, so "Awww...run with us" keeps its "run".
+// - A link runs to the next space. Text glued to it ("…/abc,padel") goes with it: losing a
+//   glued word falls back to a plainer photo, while keeping part of a link would bring the
+//   wrong photo back, which is the bug this fixes.
+// - Links with no scheme and no www ("bit.ly/kl-10k") are not recognised. None in 1,207 live
+//   plans (120 days to 2026-11-17).
+const URL_IN_TEXT = /(?:https?:\/\/|\bwww\.)\S+/g;
 
 function matchKey(rules: Array<[RegExp, string]>, ...parts: Array<string | null | undefined>): string | null {
   const hay = parts.filter(Boolean).join(' ').toLowerCase().replace(URL_IN_TEXT, ' ');

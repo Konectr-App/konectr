@@ -14,14 +14,33 @@ import { timingSafeEqual } from 'node:crypto';
 export const FORM_KEY_HEADER = 'x-interview-form-key';
 
 /**
+ * The key as the form sent it. The form percent-encodes it, because a header can only carry
+ * Latin-1: a key with an emoji or a curly quote would otherwise make the browser refuse to
+ * send the request at all. A value that isn't valid percent-encoding is taken as typed.
+ */
+export function readFormKey(headerValue: string | null | undefined): string | null {
+  if (!headerValue) return null;
+  try {
+    return decodeURIComponent(headerValue);
+  } catch {
+    return headerValue;
+  }
+}
+
+/**
  * True when the request may go on. With no key configured the check is off, so a deploy
  * without the env var behaves exactly as before.
+ *
+ * Both sides are trimmed: an env var saved with a trailing newline (`echo` adds one) would
+ * otherwise refuse every key, since a header never carries trailing whitespace.
  */
 export function formKeyOk(expected: string | undefined, given: string | null | undefined): boolean {
-  if (!expected) return true;
-  if (!given) return false;
-  const a = Buffer.from(expected, 'utf8');
-  const b = Buffer.from(given, 'utf8');
+  const want = expected?.trim();
+  const got = given?.trim();
+  if (!want) return true;
+  if (!got) return false;
+  const a = Buffer.from(want, 'utf8');
+  const b = Buffer.from(got, 'utf8');
   // timingSafeEqual throws on unequal lengths, and the length itself is not the secret.
   return a.length === b.length && timingSafeEqual(a, b);
 }
