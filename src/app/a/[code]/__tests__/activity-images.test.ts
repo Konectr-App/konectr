@@ -177,3 +177,30 @@ describe('activityImage — event photos beat the hashtag', () => {
     expect(activityImage(opts)).toBe(`/images/activities/${key}.jpg`);
   });
 });
+
+describe('activityImage — links in the text are not keywords (#322)', () => {
+  // Founder screenshot 2026-10-14: "5k" inside this reel id gave a horror night the runner photo.
+  const REEL = 'https://www.instagram.com/reel/Dd5kZ6svWfx';
+
+  it.each([
+    ['an Instagram reel id containing 5k', `Details: ${REEL}`],
+    ['a link containing 10k', 'Tickets at www.example.com/e/a10kb'],
+    ['a link containing a keyword', 'Map: https://maps.example.com/padel-club-yoga-run'],
+  ])('ignores %s', (_label, purpose) => {
+    expect(activityImage({ vibe: 'social', title: 'Hang out', purpose }))
+      .toBe(activityImage({ vibe: 'social', title: 'Hang out' }));
+  });
+
+  it('still reads the words around a link', () => {
+    expect(activityImage({ vibe: 'chill', title: 'Hang out', purpose: `Coffee first. ${REEL}` }))
+      .toBe('/images/activities/cafe.jpg');
+  });
+
+  it.each(['Sunday 5k', 'KLCC 10K loop', 'Easy 5km by the lake', 'Morning run'])('keeps "%s" on the runner photo', (title) => {
+    expect(activityImage({ vibe: 'active', title })).toBe('/images/activities/run.jpg');
+  });
+
+  it.each(['Meet at 15k Coffee Lab', 'Budget RM5k trip planning'])('does not read "%s" as a run', (title) => {
+    expect(activityImage({ vibe: 'social', title })).not.toBe('/images/activities/run.jpg');
+  });
+});

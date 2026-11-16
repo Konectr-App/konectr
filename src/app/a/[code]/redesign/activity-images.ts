@@ -112,7 +112,7 @@ const KEYWORD_RULES: Array<[RegExp, string]> = [
   // tower beats the generic restaurant shot for anything hosted at the mall.
   [/\btrx\b|tun razak exchange/, 'trx'],
   [/restaurant|dinner|lunch|makan|dining|foodie|feast/, 'restaurant'],
-  [/\brun\b|running|\bjog\b|marathon|5k|10k|park run/, 'run'],
+  [/\brun\b|running|\bjog\b|marathon|\b(?:5|10)km?\b|park run/, 'run'],
   [/yoga|pilates|stretch|breathwork/, 'yoga'],
   [/basketball|hoops/, 'basketball'],
   [/football|futsal|soccer|frisbee/, 'football'],
@@ -149,8 +149,12 @@ const WOMEN_ONLY_VIBE: Partial<Record<VibeKey, string>> = {
 // Brand gradient + dot grid, no people (women-only.jpg, 1200²).
 export const WOMEN_ONLY_PATTERN = '/images/activities/women-only.jpg';
 
+// Links are not what a plan is about: "5k" inside an Instagram reel id once gave a
+// horror night the runner photo (Konectr-App/konectr-mvp#322).
+const URL_IN_TEXT = /(?:https?:\/\/|www\.)\S+/g;
+
 function matchKey(rules: Array<[RegExp, string]>, ...parts: Array<string | null | undefined>): string | null {
-  const hay = parts.filter(Boolean).join(' ').toLowerCase();
+  const hay = parts.filter(Boolean).join(' ').toLowerCase().replace(URL_IN_TEXT, ' ');
   for (const [re, key] of rules) {
     if (re.test(hay)) return key;
   }
