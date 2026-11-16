@@ -7,7 +7,7 @@
 // Stored start_time/end_time values are true UTC — we always format them in MYT.
 //
 // Previously copy-pasted across /a/[code]/page.tsx, /a/[code]/ActivityRsvpPage.tsx,
-// /a/[code]/cancel/page.tsx, /leaderboard/page.tsx, /hyrox/page.tsx and
+// /a/[code]/cancel/page.tsx, /hyrox/page.tsx and
 // /hyrox/HyroxContent.tsx; this module is now the single source.
 //
 // NOTE: WebChatPanel formats chat timestamps in the *viewer's* local TZ (no MYT
@@ -25,7 +25,7 @@ export function asMyt(instant: Date): Date {
 
 // Returns a Date whose *local* fields (getFullYear/getMonth/getDate/getDay) read
 // the Asia/KL wall-clock of `instant` (default: now). Used for week/countdown math
-// on the leaderboard + hyrox pages.
+// on the hyrox page.
 export function klWallClock(instant: Date = new Date()): Date {
   return new Date(instant.toLocaleString('en-US', { timeZone: MYT_TZ }));
 }

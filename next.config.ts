@@ -53,6 +53,10 @@ const nextConfig: NextConfig = {
       // root no longer content-negotiates — everyone lands on /en and
       // switches locale from the picker. Do not make this temporary.
       { source: "/", destination: "/en", permanent: true },
+      // 2026-11-16: the web leaderboard is retired (Konectr-App/konectr-mvp#651,
+      // decision LB). The board lives in the app since 2.1.0. Builds before 2.1
+      // still open this URL from Settings, so it must land somewhere useful.
+      { source: "/leaderboard", destination: "/en/gamification", permanent: true },
       // 2026-09-16: the seven untranslated locales were removed (they served
       // byte-identical English). Google has ~160 URLs indexed under each prefix;
       // without these rules the middleware sends /ms/x to /en/ms/x (a 404).
