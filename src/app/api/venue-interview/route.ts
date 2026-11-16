@@ -4,6 +4,7 @@
 import { Client } from "@notionhq/client";
 import { NextRequest, NextResponse } from "next/server";
 import { clientIp, createRateLimiter } from "@/lib/rateLimit";
+import { FORM_KEY_HEADER, formKeyOk } from "@/lib/formKey";
 
 // The form is founder-only (~2 interviews a week), so 20 per IP per hour is generous (#257).
 const allow = createRateLimiter(20, 60 * 60 * 1000);
@@ -37,6 +38,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
       { status: 429 }
+    );
+  }
+
+  // After the rate limit, so guesses at the key are throttled too. Off until
+  // INTERVIEW_FORM_KEY is set on Vercel (#257).
+  if (!formKeyOk(process.env.INTERVIEW_FORM_KEY, request.headers.get(FORM_KEY_HEADER))) {
+    return NextResponse.json(
+      { error: "This form needs its key. Enter it and send again." },
+      { status: 401 }
     );
   }
 

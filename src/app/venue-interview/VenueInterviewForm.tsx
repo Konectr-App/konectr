@@ -5,10 +5,16 @@ import { useState, useEffect, useCallback } from "react";
 import { STEPS, INITIAL_DATA, type FormData, type Field } from "./interview-data";
 
 const STORAGE_KEY = "konectr-venue-interview-draft";
+// The form key (#257) is kept apart from the draft: sending an interview clears the draft, not the key.
+const FORM_KEY_STORAGE = "konectr-venue-interview-key";
+const FORM_KEY_HEADER = "x-interview-form-key";
 const RADIO_THRESHOLD = 6;
 
-export default function VenueInterviewForm() {
+export default function VenueInterviewForm({ keyRequired = false }: { keyRequired?: boolean }) {
   const [step, setStep] = useState(0);
+  const [formKey, setFormKey] = useState("");
+  const [keyRefused, setKeyRefused] = useState(false);
+  const [keySaved, setKeySaved] = useState(false);
   const [data, setData] = useState<FormData>(INITIAL_DATA);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -23,6 +29,13 @@ export default function VenueInterviewForm() {
         const parsed = JSON.parse(saved);
         setData((prev) => ({ ...prev, ...parsed }));
       }
+    } catch {
+      // ignore
+    }
+    try {
+      const savedKey = localStorage.getItem(FORM_KEY_STORAGE) || "";
+      setFormKey(savedKey);
+      setKeySaved(savedKey !== "");
     } catch {
       // ignore
     }
@@ -56,9 +69,22 @@ export default function VenueInterviewForm() {
     try {
       const res = await fetch("/api/venue-interview", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(formKey ? { [FORM_KEY_HEADER]: formKey } : {}),
+        },
         body: JSON.stringify(data),
       });
+      // 401 = the key is missing or wrong. The draft stays; only the key field reopens.
+      setKeyRefused(res.status === 401);
+      if (res.ok && formKey) {
+        try {
+          localStorage.setItem(FORM_KEY_STORAGE, formKey);
+          setKeySaved(true);
+        } catch {
+          // ignore
+        }
+      }
       if (!res.ok) {
         const err = await res.json();
         throw new Error(err.error || "Failed to submit");
@@ -154,6 +180,27 @@ export default function VenueInterviewForm() {
             />
           ))}
         </div>
+
+        {/* Asked once: on the last step until a key has worked on this device, and again if one is refused. */}
+        {(keyRefused || (keyRequired && isLast && !keySaved)) && (
+          <div className="mt-6">
+            <label htmlFor="interview-form-key" className="block text-sm font-semibold text-[#1F1F1F] mb-1">
+              Form key
+            </label>
+            <input
+              id="interview-form-key"
+              type="password"
+              autoComplete="off"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-base text-[#1F1F1F] bg-white focus:outline-none focus:ring-2 focus:ring-[#FF774D]/40 focus:border-[#FF774D] placeholder:text-gray-300"
+              value={formKey}
+              onChange={(e) => setFormKey(e.target.value)}
+              placeholder="Enter the form key"
+            />
+            <p className="mt-1 text-xs text-gray-400">
+              Saved on this device once an interview goes through.
+            </p>
+          </div>
+        )}
 
         {error && (
           <div className="mt-4 p-3 rounded-xl bg-red-50 text-red-600 text-sm">
