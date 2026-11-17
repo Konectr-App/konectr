@@ -2,8 +2,8 @@
 // Proprietary and confidential.
 //
 // Paid-traffic attribution: capture utm_*/gclid/fbclid from the landing URL
-// once per browser session, and attach them to conversion POSTs (RSVP,
-// TestFlight request, Android waitlist). Storage is sessionStorage so
+// once per browser session, and attach them to the RSVP POST (the TestFlight
+// and Android waitlist routes it also fed were removed 2026-11-17). Storage is sessionStorage so
 // attribution survives the next-intl `/` → `/en` redirect and in-site
 // navigation, but never outlives the visit (no consent needed — first-party,
 // no cookies). The capture itself runs via ATTRIBUTION_SNIPPET in the root

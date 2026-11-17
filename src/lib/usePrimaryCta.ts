@@ -23,7 +23,7 @@ export type PrimaryCta = {
  * buttons). Android → Google Play; iOS, desktop and the server render (platform
  * not yet known) → the App Store.
  *
- * No next-intl dependency, so pages outside [locale] (e.g. /leaderboard) can use it.
+ * No next-intl dependency, so pages outside [locale] (e.g. /hyrox) can use it.
  * `source` tags the click event so hero vs nav vs section clicks are separable.
  */
 export function usePrimaryCta(source: string): PrimaryCta {

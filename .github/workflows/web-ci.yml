@@ -46,7 +46,7 @@ jobs:
         run: npm run build
         env:
           NEXT_TELEMETRY_DISABLED: "1"
-          # `next build` collects page data for API routes (e.g. /api/android-waitlist)
+          # `next build` collects page data for API routes (e.g. /api/rsvp)
           # which instantiate the Supabase client at module load — createClient throws
           # "supabaseUrl is required" if the URL is absent. Placeholder values let the
           # bundle compile; real values live in Vercel. (Notion routes catch their own
