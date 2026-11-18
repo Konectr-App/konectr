@@ -1,6 +1,6 @@
 // © Konectr 2026. All rights reserved.
 import { describe, it, expect } from 'vitest';
-import { formKeyOk, readFormKey } from '../formKey';
+import { formKeyOk, formKeyRequired, readFormKey } from '../formKey';
 
 describe('formKeyOk (Konectr-App/konectr-mvp#257)', () => {
   it('is off when no key is configured, so a deploy without the env var is unchanged', () => {
@@ -37,6 +37,28 @@ describe('formKeyOk (Konectr-App/konectr-mvp#257)', () => {
     expect(formKeyOk('s3cret-key', ' s3cret-key ')).toBe(true);
     expect(formKeyOk(' \n', null)).toBe(true); // whitespace only = not configured
     expect(formKeyOk('s3cret-key', '   ')).toBe(false);
+  });
+});
+
+describe('formKeyRequired (what the page shows)', () => {
+  it('is false with no key, an empty key or a whitespace-only key', () => {
+    expect(formKeyRequired(undefined)).toBe(false);
+    expect(formKeyRequired('')).toBe(false);
+    expect(formKeyRequired('   ')).toBe(false);
+    expect(formKeyRequired(' \n')).toBe(false);
+    expect(formKeyRequired('\t')).toBe(false);
+  });
+
+  it('is true once a real key is set, with or without a trailing newline', () => {
+    expect(formKeyRequired('s3cret-key')).toBe(true);
+    expect(formKeyRequired('s3cret-key\n')).toBe(true);
+    expect(formKeyRequired(' k ')).toBe(true);
+  });
+
+  it('agrees with the API check: the field shows exactly when a request with no key is refused', () => {
+    for (const env of [undefined, '', ' ', ' \n', '\t\r\n', 's3cret-key', 's3cret-key\n', '  k  ', '0', 'false']) {
+      expect(formKeyRequired(env)).toBe(!formKeyOk(env, null));
+    }
   });
 });
 

@@ -28,6 +28,16 @@ export function readFormKey(headerValue: string | null | undefined): string | nu
 }
 
 /**
+ * True when a key is configured, read the way formKeyOk reads it. The page uses this to decide
+ * whether to show the key field, so the field and the check cannot disagree: a value that is
+ * only whitespace is "no key" for both. Before this the page used Boolean(env), which showed
+ * the field for a whitespace-only value while the check was off.
+ */
+export function formKeyRequired(expected: string | undefined): boolean {
+  return Boolean(expected?.trim());
+}
+
+/**
  * True when the request may go on. With no key configured the check is off, so a deploy
  * without the env var behaves exactly as before.
  *
