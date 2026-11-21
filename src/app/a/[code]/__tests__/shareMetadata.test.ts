@@ -109,3 +109,30 @@ describe('buildShareMetadata — not found', () => {
     expect(meta.openGraph?.images).toEqual([SHARE_OG_IMAGE]);
   });
 });
+
+describe('buildShareMetadata — Captain cover (#736)', () => {
+  const cover = `${MIXED_SHARE_ROW.id}/${'a'.repeat(32)}.jpg`;
+
+  beforeEach(() => {
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://ref.supabase.co');
+  });
+
+  it('a plan with a cover previews with it', () => {
+    const meta = buildShareMetadata({ ...MIXED_SHARE_ROW, cover_path: cover }, 'K7Q2WXYZ');
+    const url = `https://ref.supabase.co/storage/v1/object/public/activity-covers/${cover}`;
+    expect(meta.openGraph?.images).toEqual([{ url, alt: MIXED_SHARE_ROW.title }]);
+    expect(meta.twitter?.images).toEqual([url]);
+  });
+
+  it('no cover, or a path the app would not write, keeps the brand card', () => {
+    for (const cover_path of [null, undefined, '../etc/passwd', 'https://evil.example/x.jpg']) {
+      const meta = buildShareMetadata({ ...MIXED_SHARE_ROW, cover_path }, 'K7Q2WXYZ');
+      expect(meta.openGraph?.images).toEqual([SHARE_OG_IMAGE]);
+    }
+  });
+
+  it('a women-only plan never previews its cover', () => {
+    const meta = buildShareMetadata({ ...REDACTED_SHARE_ROW, cover_path: cover }, 'K7Q2WXYZ');
+    expect(meta.openGraph?.images).toEqual([SHARE_OG_IMAGE]);
+  });
+});
