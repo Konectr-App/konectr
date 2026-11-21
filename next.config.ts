@@ -96,6 +96,13 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      // Captain covers on /a/[code] (Konectr-App/konectr-mvp#736): the public
+      // activity-covers bucket only.
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/activity-covers/**",
+      },
     ],
   },
 };

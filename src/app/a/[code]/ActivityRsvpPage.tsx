@@ -5,6 +5,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import type { SharedActivity, UpcomingPlan, UnlockedPlan } from '@/lib/supabase';
+import { planCoverUrl } from '@/lib/planCover';
 import {
   getActivityRsvpTeaser,
   getWebGuestPlan,
@@ -410,7 +411,10 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
   const venueLng = activity.redacted ? unlocked?.location_lng ?? null : activity.location_lng;
   const purposeText = activity.details || unlocked?.details || activity.description;
   const vibe = resolveVibe(activity.category);
-  const posterPhoto = activityImage({
+  // The Captain's cover wins, as on the app's plan page (#736). A redacted
+  // women-only plan never carries one.
+  const coverPhoto = activity.redacted ? null : planCoverUrl(activity.cover_path);
+  const posterPhoto = coverPhoto ?? activityImage({
     vibe: vibe.key,
     venueName,
     title,
