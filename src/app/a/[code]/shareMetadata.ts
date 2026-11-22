@@ -3,6 +3,7 @@
 
 import type { Metadata } from 'next';
 import type { SharedActivity } from '@/lib/supabase';
+import { planCoverUrl } from '@/lib/planCover';
 import { SHARE_OG_IMAGE } from '@/lib/metadata';
 import { formatWeekdayDate, formatTime } from '@/lib/datetime';
 
@@ -63,6 +64,11 @@ export function buildShareMetadata(activity: SharedActivity | null, code: string
     };
   }
 
+  // A plan with a Captain's cover previews with it (#736); others keep the
+  // brand card.
+  const cover = planCoverUrl(activity.cover_path);
+  const ogImage = cover ? { url: cover, alt: activity.title ?? SHARE_OG_IMAGE.alt } : SHARE_OG_IMAGE;
+
   const venueName = activity.venue_name || 'TBD';
   const currentParticipants = Number(activity.current_participants);
   // Spots framing matches the landing page + share message ("X spots left"), not
@@ -89,13 +95,13 @@ export function buildShareMetadata(activity: SharedActivity | null, code: string
       description: richDescription,
       url: `https://konectr.app/a/${code}`,
       type: 'website',
-      images: [SHARE_OG_IMAGE],
+      images: [ogImage],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${activity.title} - Konectr`,
       description: richDescription,
-      images: [SHARE_OG_IMAGE.url],
+      images: [ogImage.url],
     },
   };
 }

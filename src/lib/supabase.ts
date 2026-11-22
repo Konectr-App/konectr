@@ -45,6 +45,10 @@ export interface SharedActivity {
   /** `user_availability.tags` (hashtag + hub keys). Not returned by the RPC yet;
    *  once it is, the hero uses the hashtag's photo instead of keyword matching. */
   tags?: string[] | null;
+  /** The Captain's cover, `<activity_id>/<32 hex>.jpg` in the public bucket
+   *  `activity-covers`. Null when none is set, the console hid it, the plan is
+   *  a women-only plan hidden from the viewer, or `ring_kit` is off. */
+  cover_path?: string | null;
 }
 
 // Fetch activity by share code
