@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useRef, type MouseEvent, type ReactNode } from 'react';
 import type { Vibe } from './vibes';
+import type { PlanLink } from '@/lib/planExtras';
 
 // Kinetic Brand Design System v3.0 tokens (lib/core/theme/kinetic_colors.dart):
 // Sunset Orange #FF774D · Solar Amber #FFC845 · Graphite #1F1F1F · Cloud White #FAFAFA
@@ -389,6 +390,52 @@ function linkify(text: string): ReactNode[] {
   }
   if (last < text.length) out.push(text.slice(last));
   return out;
+}
+
+// The Captain's Paid tag ("Paid · RM 25 at the gym"), as on the app's plan
+// page. A free plan has no tag, so this only ever renders for a paid one.
+export function PaidTag({ label }: { label: string }) {
+  return (
+    <span className="inline-flex max-w-full items-center gap-[7px] rounded-full bg-[#1F1F1F] px-[13px] py-[7px] text-[12.5px] font-bold text-white">
+      <svg className="w-[14px] h-[14px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z" />
+        <circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" />
+      </svg>
+      <span className="truncate">{label}</span>
+    </span>
+  );
+}
+
+// The Captain's links (at most three, https only: see planLinks()). Label on
+// top, the short address under it, the whole row one 44 pt tap target.
+export function PlanLinks({ links }: { links: PlanLink[] }) {
+  if (links.length === 0) return null;
+  return (
+    <ul className="bg-white border-[1.5px] border-[#EDEBE9] rounded-[18px] divide-y divide-[#F0EEEC] overflow-hidden">
+      {links.map((link) => (
+        <li key={link.url}>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="flex min-h-[52px] items-center gap-3 px-4 py-[10px] hover:bg-[#FFF9F7] transition-colors"
+          >
+            <span className="w-8 h-8 shrink-0 grid place-items-center rounded-full bg-[#FFF4F1] text-[#E6693F]">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7" />
+                <path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7" />
+              </svg>
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block truncate text-[14.5px] font-bold text-[#1F1F1F]">{link.label}</span>
+              <span className="block truncate text-[12px] text-[#737373]">{link.shortUrl}</span>
+            </span>
+            <span className="shrink-0 text-[#B5B0AB]" aria-hidden>↗</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 // The in-app "Here for…" purpose (merged title+details field): 2-line preview + expand.

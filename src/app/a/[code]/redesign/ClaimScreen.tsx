@@ -7,8 +7,9 @@ import type { Vibe } from './vibes';
 import RsvpLayout from './RsvpLayout';
 import {
   WhenWhereTiles, HereFor, CrewStack, TrustLine, StartedByRow,
-  LockedWhenWhereTiles, WomenOnlyBanner, LockedCrewRow, AttestCheckbox,
+  LockedWhenWhereTiles, WomenOnlyBanner, LockedCrewRow, AttestCheckbox, PaidTag, PlanLinks,
 } from './KineticUI';
+import type { PlanLink } from '@/lib/planExtras';
 
 export interface CountryCode {
   code: string;
@@ -80,6 +81,10 @@ export interface ClaimScreenProps {
   appCta?: ReactNode;
   /** Deep-link for existing app users; hidden when absent. */
   openInAppHref?: string;
+  /** The Captain's Paid tag ("Paid · RM 25 at the gym"); null on a free plan. */
+  paidTag?: string | null;
+  /** The Captain's links, already checked by planLinks(). */
+  links?: PlanLink[];
   /** PF-46: women-only plan (poster line). */
   womenOnly?: boolean;
   /** PF-46: venue, time and crew are hidden; show day part, area and group size. */
@@ -114,9 +119,21 @@ export default function ClaimScreen(p: ClaimScreenProps) {
         />
       )}
 
+      {p.paidTag && (
+        <div className="mt-3">
+          <PaidTag label={p.paidTag} />
+        </div>
+      )}
+
       {p.purpose && (
         <div className="mt-5">
           <HereFor text={p.purpose} />
+        </div>
+      )}
+
+      {p.links && p.links.length > 0 && (
+        <div className="mt-4">
+          <PlanLinks links={p.links} />
         </div>
       )}
 

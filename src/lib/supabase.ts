@@ -49,6 +49,14 @@ export interface SharedActivity {
    *  `activity-covers`. Null when none is set, the console hid it, the plan is
    *  a women-only plan hidden from the viewer, or `ring_kit` is off. */
   cover_path?: string | null;
+  /** The Captain's links, `[{label, url}]`, https only, at most three. Null
+   *  when none, on a hidden women-only plan, or while `ring_kit` is off.
+   *  Read through `planLinks()`, never rendered raw. */
+  links?: unknown;
+  /** True when the Captain marked the plan paid. Null under the same rules. */
+  is_paid?: boolean | null;
+  /** "RM 25 at the gym", at most 40 characters; only set on a paid plan. */
+  paid_note?: string | null;
 }
 
 // Fetch activity by share code
