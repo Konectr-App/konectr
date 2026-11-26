@@ -5,7 +5,8 @@
 import type { MouseEvent, ReactNode } from 'react';
 import type { Vibe } from './vibes';
 import RsvpLayout from './RsvpLayout';
-import { WhenWhereTiles, HereFor, CrewStack, StartedByRow, LockedWhenWhereTiles } from './KineticUI';
+import { WhenWhereTiles, HereFor, CrewStack, StartedByRow, LockedWhenWhereTiles, PaidTag, PlanLinks } from './KineticUI';
+import type { PlanLink } from '@/lib/planExtras';
 
 export interface ChattingScreenProps {
   vibe: Vibe;
@@ -38,6 +39,10 @@ export interface ChattingScreenProps {
   onWithdraw?: () => void;
   onAddToCalendar?: () => void;
   onShare?: () => void;
+  /** The Captain's Paid tag ("Paid · RM 25 at the gym"); null on a free plan. */
+  paidTag?: string | null;
+  /** The Captain's links, already checked by planLinks(). */
+  links?: PlanLink[];
   /** PF-46: women-only plan (poster line). */
   womenOnly?: boolean;
   /** PF-46: the guest's plan couldn't be unlocked yet — keep the tiles locked. */
@@ -87,6 +92,12 @@ export default function ChattingScreen(p: ChattingScreenProps) {
         {/* venueName above is the real venue (maps query); the poster h1 uses heading. */}
       </div>
 
+      {p.paidTag && (
+        <div className="mt-3">
+          <PaidTag label={p.paidTag} />
+        </div>
+      )}
+
       {/* Calendar + share — icon-only (labels omitted by design; discoverable) */}
       <div className="flex gap-[9px] mt-3">
         <button
@@ -119,6 +130,12 @@ export default function ChattingScreen(p: ChattingScreenProps) {
       {p.purpose && (
         <div className="mt-5">
           <HereFor text={p.purpose} />
+        </div>
+      )}
+
+      {p.links && p.links.length > 0 && (
+        <div className="mt-4">
+          <PlanLinks links={p.links} />
         </div>
       )}
 

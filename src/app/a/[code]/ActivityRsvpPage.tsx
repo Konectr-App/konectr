@@ -6,6 +6,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { SharedActivity, UpcomingPlan, UnlockedPlan } from '@/lib/supabase';
 import { planCoverUrl } from '@/lib/planCover';
+import { planLinks, paidTag as planPaidTag } from '@/lib/planExtras';
 import {
   getActivityRsvpTeaser,
   getWebGuestPlan,
@@ -414,6 +415,10 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
   // The Captain's cover wins, as on the app's plan page (#736). A redacted
   // women-only plan never carries one.
   const coverPhoto = activity.redacted ? null : planCoverUrl(activity.cover_path);
+  // The Captain's Paid tag and links (#812). The RPC nulls them on a redacted
+  // women-only plan and while ring_kit is off; the guard here is belt and braces.
+  const paidTag = activity.redacted ? null : planPaidTag(activity.is_paid, activity.paid_note);
+  const links = activity.redacted ? [] : planLinks(activity.links);
   const posterPhoto = coverPhoto ?? activityImage({
     vibe: vibe.key,
     venueName,
@@ -494,6 +499,8 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
           venueLat={venueLat}
           venueLng={venueLng}
           womenOnly={activity.women_only}
+          paidTag={paidTag}
+          links={links}
           locked={lockedTiles}
           guestName={storedRsvp.guestName}
           justClaimed={justClaimed}
@@ -584,6 +591,8 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
       venueLat={venueLat}
       venueLng={venueLng}
       womenOnly={activity.women_only}
+      paidTag={paidTag}
+      links={links}
       locked={lockedTiles && { ...lockedTiles, groupSize: activity.max_participants }}
       crewNames={participantNames}
       crewTotal={participantCount}
