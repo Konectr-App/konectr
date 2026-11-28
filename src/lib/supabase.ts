@@ -49,6 +49,11 @@ export interface SharedActivity {
    *  `activity-covers`. Null when none is set, the console hid it, the plan is
    *  a women-only plan hidden from the viewer, or `ring_kit` is off. */
   cover_path?: string | null;
+  /** The cover's focal point, 0..1 from the left and top edges; null is the
+   *  centre (Konectr-App/konectr-mvp#825). Not returned by the RPC yet, so a
+   *  missing field also means the centre. Read through `coverObjectPosition()`. */
+  cover_focal_x?: number | null;
+  cover_focal_y?: number | null;
   /** The Captain's links, `[{label, url}]`, https only, at most three. Null
    *  when none, on a hidden women-only plan, or while `ring_kit` is off.
    *  Read through `planLinks()`, never rendered raw. */

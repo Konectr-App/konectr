@@ -4,7 +4,7 @@
 
 import type { MouseEvent, ReactNode } from 'react';
 import type { Vibe } from './vibes';
-import RsvpLayout from './RsvpLayout';
+import RsvpLayout, { type PosterViewer } from './RsvpLayout';
 import {
   WhenWhereTiles, HereFor, CrewStack, TrustLine, StartedByRow,
   LockedWhenWhereTiles, WomenOnlyBanner, LockedCrewRow, AttestCheckbox, PaidTag, PlanLinks,
@@ -87,6 +87,8 @@ export interface ClaimScreenProps {
   links?: PlanLink[];
   /** PF-46: women-only plan (poster line). */
   womenOnly?: boolean;
+  /** Tapping the poster opens the whole image full screen (#825). */
+  viewer?: PosterViewer;
   /** PF-46: venue, time and crew are hidden; show day part, area and group size. */
   locked?: LockedDetails;
 }
@@ -99,7 +101,7 @@ export default function ClaimScreen(p: ClaimScreenProps) {
   };
 
   return (
-    <RsvpLayout vibe={p.vibe} photo={p.photo} venueName={p.heading || p.venueName} womenOnly={p.womenOnly}>
+    <RsvpLayout vibe={p.vibe} photo={p.photo} venueName={p.heading || p.venueName} womenOnly={p.womenOnly} viewer={p.viewer}>
       {p.locked ? (
         <>
           <LockedWhenWhereTiles dayPart={p.locked.dayPart} area={p.locked.area} />
