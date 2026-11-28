@@ -4,7 +4,7 @@
 
 import type { MouseEvent, ReactNode } from 'react';
 import type { Vibe } from './vibes';
-import RsvpLayout from './RsvpLayout';
+import RsvpLayout, { type PosterViewer } from './RsvpLayout';
 import { WhenWhereTiles, HereFor, CrewStack, StartedByRow, LockedWhenWhereTiles, PaidTag, PlanLinks } from './KineticUI';
 import type { PlanLink } from '@/lib/planExtras';
 
@@ -45,6 +45,8 @@ export interface ChattingScreenProps {
   links?: PlanLink[];
   /** PF-46: women-only plan (poster line). */
   womenOnly?: boolean;
+  /** Tapping the poster opens the whole image full screen (#825). */
+  viewer?: PosterViewer;
   /** PF-46: the guest's plan couldn't be unlocked yet — keep the tiles locked. */
   locked?: { dayPart: string | null; area: string | null };
 }
@@ -54,7 +56,7 @@ export interface ChattingScreenProps {
 // affordance sits at the bottom (no host to "cancel on" — you withdraw yourself).
 export default function ChattingScreen(p: ChattingScreenProps) {
   return (
-    <RsvpLayout vibe={p.vibe} photo={p.photo} venueName={p.heading || p.venueName} posterKicker="You're in" womenOnly={p.womenOnly}>
+    <RsvpLayout vibe={p.vibe} photo={p.photo} venueName={p.heading || p.venueName} posterKicker="You're in" womenOnly={p.womenOnly} viewer={p.viewer}>
       {/* Confirmation line — one-time celebration, only right after claiming.
           Returning visitors land straight on the tiles (the poster already says "You're in"). */}
       {p.justClaimed && (

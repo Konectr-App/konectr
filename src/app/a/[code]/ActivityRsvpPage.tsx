@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import type { SharedActivity, UpcomingPlan, UnlockedPlan } from '@/lib/supabase';
-import { planCoverUrl } from '@/lib/planCover';
+import { planCoverUrl, coverObjectPosition } from '@/lib/planCover';
 import { planLinks, paidTag as planPaidTag } from '@/lib/planExtras';
 import {
   getActivityRsvpTeaser,
@@ -38,7 +38,7 @@ import WebChatPanel from './WebChatPanel';
 import WebHeadcountCard from './WebHeadcountCard';
 import { resolveVibe } from './redesign/vibes';
 import { activityImage } from './redesign/activity-images';
-import RsvpLayout from './redesign/RsvpLayout';
+import RsvpLayout, { type PosterViewer } from './redesign/RsvpLayout';
 import ClaimScreen from './redesign/ClaimScreen';
 import ChattingScreen from './redesign/ChattingScreen';
 import WithdrawSheet from './redesign/WithdrawSheet';
@@ -462,6 +462,19 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
     }
   };
 
+  // Tap the poster to see the whole image (#825). The expand hint and the
+  // focal point apply to the Captain's cover only; a default photo still
+  // opens, just without the hint. Share in the viewer shares the plan link.
+  const posterViewer: PosterViewer = {
+    customCover: coverPhoto !== null,
+    objectPosition: coverPhoto ? coverObjectPosition(activity.cover_focal_x, activity.cover_focal_y) : undefined,
+    onOpen: () => trackRsvp('cover_viewer_open', { surface: 'web', custom_cover: coverPhoto !== null }),
+    onShare: () => {
+      trackRsvp('cover_viewer_share', { surface: 'web' });
+      void handleShare();
+    },
+  };
+
   // =============================================
   // Active Activity — Kinetic redesign
   // =============================================
@@ -471,7 +484,7 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
   // returning RSVP'd user from flashing the claim form before localStorage reads.
   if (rsvpState === 'loading') {
     return (
-      <RsvpLayout vibe={vibe} photo={posterPhoto} venueName={heading} womenOnly={activity.women_only}>
+      <RsvpLayout vibe={vibe} photo={posterPhoto} venueName={heading} womenOnly={activity.women_only} viewer={posterViewer}>
         <div className="flex gap-3">
           <div className="flex-1 h-[116px] rounded-[18px] bg-[#F0EEEC] animate-pulse" />
           <div className="flex-1 h-[116px] rounded-[18px] bg-[#F0EEEC] animate-pulse" />
@@ -499,6 +512,7 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
           venueLat={venueLat}
           venueLng={venueLng}
           womenOnly={activity.women_only}
+          viewer={posterViewer}
           paidTag={paidTag}
           links={links}
           locked={lockedTiles}
@@ -591,6 +605,7 @@ export default function ActivityRsvpPage({ activity, shareCode, isLate = false, 
       venueLat={venueLat}
       venueLng={venueLng}
       womenOnly={activity.women_only}
+      viewer={posterViewer}
       paidTag={paidTag}
       links={links}
       locked={lockedTiles && { ...lockedTiles, groupSize: activity.max_participants }}
